@@ -1,0 +1,318 @@
+/* --- Global Variables Configuration --- */
+:root {
+    --bg-navy-dark: #0A0F1D;        /* Rich, deep primary navy dark blue background */
+    --bg-card-navy: #131B2E;        /* Lighter navy base for card wrappers */
+    
+    --text-silver-bright: #E2E8F0;  /* High-end bright silver for primary headers */
+    --text-silver-muted: #94A3B8;   /* Soft matte silver for standard descriptive lettering */
+    
+    --olive-contrast: #829A44;      /* Light olive green for crisp element contrast */
+    --olive-lettering: #A3BF5C;     /* Brightened olive green specifically chosen for readable lettering */
+    --olive-hover: #607232;         /* Deep olive transition state */
+    
+    /* Configured Fonts */
+    --font-serif-original: 'Playfair Display', Georgia, serif; /* For ComfyUI */
+    --font-heading: 'Syncopate', sans-serif;                   /* For AI Artist & Section Headers */
+    --font-body: 'Tenor Sans', sans-serif;                     /* For paragraphs and reading text */
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* --- Foundation Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-navy-dark);
+    color: var(--text-silver-muted);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- Layout Scaffolding --- */
+.container {
+    width: 88%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 0;
+}
+
+/* Strict Slide Section Structuring */
+.slide {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-top: 60px;
+}
+
+/* --- Top Left Anchor Navigation --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 40px 0 0 6%; 
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-links a {
+    font-family: var(--font-body);
+    color: var(--text-silver-bright);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    position: relative;
+    transition: var(--transition-smooth);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background-color: var(--olive-contrast);
+    transition: var(--transition-smooth);
+}
+
+.nav-links a:hover {
+    color: var(--olive-lettering);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* --- Slide 1: About Elements --- */
+.section-about {
+    background: radial-gradient(circle at 80% 20%, #16223F 0%, var(--bg-navy-dark) 70%);
+}
+
+.container-about {
+    max-width: 850px;
+    margin-left: 6%; 
+}
+
+/* Blended Main Title Formatting */
+.section-about h1 {
+    font-size: 3rem;
+    color: var(--text-silver-bright);
+    line-height: 1.4;
+    margin-bottom: 25px;
+}
+
+/* Part 1: ComfyUI Font styling */
+.serif-text {
+    font-family: var(--font-serif-original);
+    font-weight: 600;
+    letter-spacing: 0px;
+    text-transform: none;
+}
+
+/* Part 2: AI Artist Widescreen styling */
+.accent-text {
+    font-family: var(--font-heading);
+    color: var(--olive-lettering); 
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.divider {
+    width: 60px;
+    height: 2px;
+    background-color: var(--olive-contrast);
+    margin: 20px 0 30px 0;
+}
+
+.divider.center {
+    margin: 20px auto 50px auto;
+}
+
+.lead-text {
+    font-size: 1.25rem;
+    color: var(--text-silver-bright);
+    font-weight: 400;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+}
+
+.body-text {
+    font-size: 0.95rem;
+    margin-bottom: 40px;
+    max-width: 700px;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    display: inline-block;
+    font-family: var(--font-body);
+    background-color: transparent;
+    color: var(--olive-lettering);
+    border: 1px solid var(--olive-contrast);
+    padding: 14px 32px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: var(--transition-smooth);
+}
+
+.btn-primary:hover {
+    background-color: var(--olive-contrast);
+    color: var(--bg-navy-dark);
+    box-shadow: 0 0 20px rgba(130, 154, 68, 0.2);
+}
+
+/* --- Slide 2: Portfolio Elements --- */
+.section-portfolio {
+    background-color: #080C17;
+    border-top: 1px solid rgba(148, 163, 184, 0.05);
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    color: var(--text-silver-bright);
+    font-size: 2.2rem;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.section-subtitle {
+    font-family: var(--font-body);
+    text-align: center;
+    font-size: 0.95rem;
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+
+/* Restored Original 2x3 Grid Parameters */
+.portfolio-grid-2x3 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px; 
+}
+
+.card {
+    background-color: var(--bg-card-navy);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(163, 191, 92, 0.3);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Restored Original Exact Box Dimensions */
+.card-media-placeholder {
+    background-color: #0D1424;
+    height: 220px; 
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.category-tag {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: rgba(10, 15, 29, 0.85);
+    border: 1px solid var(--text-silver-muted);
+    color: var(--text-silver-bright);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    letter-spacing: 1.5px;
+    border-radius: 2px;
+}
+
+.category-tag.video-tag {
+    border-color: var(--olive-contrast);
+    color: var(--olive-lettering);
+}
+
+.placeholder-icon {
+    font-size: 2.8rem; 
+    opacity: 0.25;
+    transition: var(--transition-smooth);
+}
+
+.card:hover .placeholder-icon {
+    opacity: 0.6;
+    transform: scale(1.1);
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-content h3 {
+    font-family: var(--font-body);
+    color: var(--text-silver-bright);
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.card-content p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+}
+
+/* --- Fluid Screen Adaptations --- */
+@media (max-width: 900px) {
+    .portfolio-grid-2x3 {
+        grid-template-columns: 1fr; 
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 25px 0 0 6%;
+    }
+    
+    .section-about h1 {
+        font-size: 2rem;
+    }
+    
+    .accent-text {
+        font-size: 1.6rem;
+        margin-left: 0;
+        display: block; 
+    }
+    
+    .container {
+        padding: 60px 0;
+    }
+}
