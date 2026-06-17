@@ -10,11 +10,10 @@
     --olive-lettering: #A3BF5C;     /* Brightened olive green specifically chosen for readable lettering */
     --olive-hover: #607232;         /* Deep olive transition state */
     
-    /* Configured Fonts */
-    --font-serif-original: 'Playfair Display', Georgia, serif; /* For ComfyUI */
-    --font-heading: 'Syncopate', sans-serif;                   /* For AI Artist & Section Headers */
-    --font-body: 'Tenor Sans', sans-serif;                     /* For paragraphs and reading text */
-    --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    /* Harmonized Global Fonts */
+    --font-heading: 'Syncopate', sans-serif;                   
+    --font-body: 'Tenor Sans', sans-serif;                     
+    --transition-smooth: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 /* --- Foundation Reset --- */
@@ -32,49 +31,82 @@ body {
     font-family: var(--font-body);
     background-color: var(--bg-navy-dark);
     color: var(--text-silver-muted);
-    line-height: 1.6;
+    line-height: 1.5; 
     overflow-x: hidden;
 }
 
 /* --- Layout Scaffolding --- */
 .container {
     width: 88%;
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 100px 0;
+    padding: 50px 0; /* Tightened container margins */
 }
 
-/* Strict Slide Section Structuring */
 .slide {
     min-height: 100vh;
     display: flex;
     align-items: center;
     position: relative;
-    padding-top: 60px;
+    padding-top: 40px;
+    z-index: 10;
 }
 
-/* --- Top Left Anchor Navigation --- */
-.navbar {
+/* --- Integrated Background Art Slot Framework --- */
+.bg-image-wrapper {
+    position: absolute;
+    width: 300px;
+    height: 380px;
+    border: 1px dashed rgba(163, 191, 92, 0.12);
+    background: rgba(13, 20, 36, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 1;
+    border-radius: 4px;
+}
+
+.bg-image-placeholder {
+    font-family: var(--font-heading);
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    color: var(--olive-contrast);
+    opacity: 0.35;
+    text-transform: uppercase;
+}
+
+.bg-slot-1 {
+    top: 12%;
+    left: 4%;
+}
+
+.bg-slot-2 {
+    top: 52%;
+    right: 4%;
+}
+
+/* --- Top Right Header Navigation --- */
+.navbar-right {
     position: fixed;
     top: 0;
-    left: 0;
-    padding: 40px 0 0 6%; 
+    right: 0;
+    padding: 30px 6% 0 0; 
     z-index: 1000;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 40px;
+    gap: 35px;
 }
 
 .nav-links a {
     font-family: var(--font-body);
     color: var(--text-silver-bright);
     text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
-    letter-spacing: 3px;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
     text-transform: uppercase;
     position: relative;
     transition: var(--transition-smooth);
@@ -83,7 +115,7 @@ body {
 .nav-links a::after {
     content: '';
     position: absolute;
-    bottom: -6px;
+    bottom: -4px;
     left: 0;
     width: 0;
     height: 1.5px;
@@ -99,103 +131,176 @@ body {
     width: 100%;
 }
 
-/* --- Slide 1: About Elements --- */
+/* --- Slide 1: Identity & Central Layout Structure --- */
 .section-about {
-    background: radial-gradient(circle at 80% 20%, #16223F 0%, var(--bg-navy-dark) 70%);
+    background: radial-gradient(circle at 50% 45%, #16223F 0%, var(--bg-navy-dark) 80%);
 }
 
-.container-about {
+.container-about-centered {
     max-width: 850px;
-    margin-left: 6%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -4vh; 
 }
 
-/* Blended Main Title Formatting */
-.section-about h1 {
-    font-size: 3rem;
-    color: var(--text-silver-bright);
-    line-height: 1.4;
-    margin-bottom: 25px;
+.about-hero-center {
+    text-align: center;
+    width: 100%;
 }
 
-/* Part 1: ComfyUI Font styling */
-.serif-text {
-    font-family: var(--font-serif-original);
-    font-weight: 600;
-    letter-spacing: 0px;
-    text-transform: none;
-}
-
-/* Part 2: AI Artist Widescreen styling */
-.accent-text {
-    font-family: var(--font-heading);
-    color: var(--olive-lettering); 
-    font-size: 2.5rem;
-    letter-spacing: 4px;
-    text-transform: uppercase;
+/* Identity Name Block Styling */
+.identity-block {
     display: inline-block;
-    margin-left: 10px;
+    position: relative;
+    width: 100%;
+    margin-bottom: 8px;
 }
 
-.divider {
-    width: 60px;
-    height: 2px;
-    background-color: var(--olive-contrast);
-    margin: 20px 0 30px 0;
-}
-
-.divider.center {
-    margin: 20px auto 50px auto;
-}
-
-.lead-text {
-    font-size: 1.25rem;
-    color: var(--text-silver-bright);
-    font-weight: 400;
-    margin-bottom: 20px;
-    line-height: 1.6;
-    letter-spacing: 0.5px;
-}
-
-.body-text {
-    font-size: 0.95rem;
-    margin-bottom: 40px;
-    max-width: 700px;
-    letter-spacing: 0.5px;
-}
-
-.btn-primary {
-    display: inline-block;
+.primary-name {
     font-family: var(--font-body);
-    background-color: transparent;
-    color: var(--olive-lettering);
-    border: 1px solid var(--olive-contrast);
-    padding: 14px 32px;
-    text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 1.9rem; 
     font-weight: 500;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    border-radius: 2px;
+    color: var(--text-silver-bright);
+    line-height: 1.1;
+    display: inline-block;
+}
+
+/* Shifts BFA directly underneath the end profile of the name heading */
+.academic-title-wrap {
+    text-align: right;
+    max-width: 590px; /* Matches perfectly to name footprint limits */
+    margin: 2px auto 0 auto;
+}
+
+.academic-title {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    color: var(--olive-lettering);
+    font-weight: 700;
+    display: inline-block;
+}
+
+/* Contact Strip Metrics (+2pt Sizing Scale Increase) */
+.contact-data-strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 12px 0; 
+}
+
+.contact-item {
+    font-size: 1.12rem; 
+    letter-spacing: 0.5px;
+    color: var(--text-silver-bright);
+}
+
+.underlined-link {
+    text-decoration: underline !important;
+    text-underline-offset: 4px;
     transition: var(--transition-smooth);
 }
 
-.btn-primary:hover {
-    background-color: var(--olive-contrast);
-    color: var(--bg-navy-dark);
-    box-shadow: 0 0 20px rgba(130, 154, 68, 0.2);
+.contact-item a {
+    color: var(--text-silver-bright);
 }
 
-/* --- Slide 2: Portfolio Elements --- */
+.contact-item a:hover {
+    color: var(--olive-lettering);
+}
+
+.inline-vertical-divider {
+    width: 1px;
+    height: 18px;
+    background-color: var(--olive-contrast);
+    opacity: 0.6;
+    display: inline-block;
+}
+
+.inline-vertical-divider.mini {
+    height: 12px;
+}
+
+/* Profession Title matched completely to Name metrics & set to Bold-Italic */
+.profession-italic-title {
+    margin-bottom: 12px;
+    font-family: var(--font-body);
+    font-size: 1.9rem; /* Exactly matched to primary name size scale */
+    font-weight: 700;  /* Bolded as required */
+    letter-spacing: 3px;
+    color: var(--olive-lettering);
+    text-transform: uppercase;
+    font-style: italic; 
+}
+
+/* Fine-lined Section Dividers */
+.section-divider {
+    width: 50px;
+    height: 1px;
+    background-color: rgba(148, 163, 184, 0.2);
+    margin: 12px auto;
+}
+
+.section-divider.center {
+    margin: 12px auto 20px auto;
+}
+
+/* Combined Body Summary Line Layout */
+.unified-body-text {
+    font-size: 0.95rem;
+    max-width: 720px;
+    margin: 0 auto;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+    color: var(--text-silver-muted);
+}
+
+/* Credentials Footer */
+.credentials-footer {
+    margin-top: 12px;
+}
+
+.footer-prompt {
+    font-size: 0.82rem;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    color: var(--text-silver-muted);
+}
+
+.links-strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.credential-link {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--olive-lettering);
+}
+
+.credential-link:hover {
+    color: var(--text-silver-bright);
+}
+
+/* --- Slide 2: Single Column Portfolio Layout --- */
 .section-portfolio {
     background-color: #080C17;
-    border-top: 1px solid rgba(148, 163, 184, 0.05);
+    border-top: 1px solid rgba(148, 163, 184, 0.04);
 }
 
 .section-title {
     font-family: var(--font-heading);
     color: var(--text-silver-bright);
-    font-size: 2.2rem;
-    letter-spacing: 6px;
+    font-size: 2rem;
+    letter-spacing: 5px;
     text-transform: uppercase;
     text-align: center;
 }
@@ -203,16 +308,27 @@ body {
 .section-subtitle {
     font-family: var(--font-body);
     text-align: center;
-    font-size: 0.95rem;
-    margin-top: 10px;
+    font-size: 0.9rem;
+    margin-top: 6px;
     letter-spacing: 1px;
 }
 
-/* Restored Original 2x3 Grid Parameters */
-.portfolio-grid-2x3 {
+.portfolio-info-matter {
+    text-align: center;
+    font-size: 0.88rem;
+    max-width: 650px;
+    margin: 0 auto 30px auto;
+    line-height: 1.5;
+    color: var(--text-silver-muted);
+}
+
+/* Strict 1-Column Grid Setup */
+.portfolio-grid-single-vertical {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px; 
+    grid-template-columns: 1fr;
+    gap: 35px;
+    max-width: 750px;
+    margin: 0 auto;
 }
 
 .card {
@@ -224,15 +340,14 @@ body {
 }
 
 .card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(163, 191, 92, 0.3);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(-4px);
+    border-color: rgba(163, 191, 92, 0.25);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
 }
 
-/* Restored Original Exact Box Dimensions */
 .card-media-placeholder {
     background-color: #0D1424;
-    height: 220px; 
+    height: 200px; 
     position: relative;
     display: flex;
     align-items: center;
@@ -242,15 +357,15 @@ body {
 
 .category-tag {
     position: absolute;
-    top: 15px;
-    left: 15px;
+    top: 12px;
+    left: 12px;
     background-color: rgba(10, 15, 29, 0.85);
     border: 1px solid var(--text-silver-muted);
     color: var(--text-silver-bright);
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     text-transform: uppercase;
-    padding: 4px 10px;
-    letter-spacing: 1.5px;
+    padding: 3px 8px;
+    letter-spacing: 1px;
     border-radius: 2px;
 }
 
@@ -260,59 +375,92 @@ body {
 }
 
 .placeholder-icon {
-    font-size: 2.8rem; 
-    opacity: 0.25;
+    font-size: 2.5rem; 
+    opacity: 0.2;
     transition: var(--transition-smooth);
 }
 
 .card:hover .placeholder-icon {
-    opacity: 0.6;
-    transform: scale(1.1);
+    opacity: 0.5;
+    transform: scale(1.05);
 }
 
 .card-content {
-    padding: 25px;
+    padding: 20px;
 }
 
 .card-content h3 {
     font-family: var(--font-body);
     color: var(--text-silver-bright);
-    font-size: 1.15rem;
-    margin-bottom: 10px;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
     font-weight: 500;
     letter-spacing: 1px;
 }
 
 .card-content p {
     font-size: 0.85rem;
-    line-height: 1.6;
+    line-height: 1.5;
     letter-spacing: 0.5px;
 }
 
+/* Static Gallery Trigger Placeholder at Content Base */
+.portfolio-footer-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 45px;
+}
+
+.btn-primary-unlinked {
+    display: inline-block;
+    font-family: var(--font-body);
+    background-color: transparent;
+    color: var(--olive-lettering);
+    border: 1px solid var(--olive-contrast);
+    padding: 12px 30px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    cursor: default; 
+}
+
 /* --- Fluid Screen Adaptations --- */
-@media (max-width: 900px) {
-    .portfolio-grid-2x3 {
-        grid-template-columns: 1fr; 
-        gap: 30px;
+@media (max-width: 1024px) {
+    .bg-image-wrapper {
+        display: none; 
     }
 }
 
 @media (max-width: 768px) {
-    .navbar {
-        padding: 25px 0 0 6%;
+    .navbar-right {
+        position: absolute;
+        top: 0;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 20px 0 0 0;
     }
     
-    .section-about h1 {
-        font-size: 2rem;
+    .contact-data-strip {
+        flex-direction: column;
+        gap: 6px;
     }
     
-    .accent-text {
-        font-size: 1.6rem;
-        margin-left: 0;
-        display: block; 
+    .inline-vertical-divider {
+        display: none;
+    }
+    
+    .primary-name, .profession-italic-title {
+        font-size: 1.5rem;
+    }
+    
+    .academic-title-wrap {
+        text-align: center;
     }
     
     .container {
-        padding: 60px 0;
+        padding: 40px 0;
     }
 }
