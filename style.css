@@ -10,9 +10,9 @@
     --olive-lettering: #A3BF5C;     /* Brightened olive green specifically chosen for readable lettering */
     --olive-hover: #607232;         /* Deep olive transition state */
     
-    /* Harmonized Global Fonts */
-    --font-heading: 'Syncopate', sans-serif;                   
-    --font-body: 'Tenor Sans', sans-serif;                     
+    /* Font stacks locked with clean system fallbacks to preserve browser spacing */
+    --font-heading: 'Syncopate', BlinkMacSystemFont, "Segoe UI", sans-serif;                   
+    --font-body: 'Tenor Sans', Helvetica, Arial, sans-serif;                     
     --transition-smooth: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -33,14 +33,15 @@ body {
     color: var(--text-silver-muted);
     line-height: 1.5; 
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased; /* Preserves crisp, uniform line weights */
 }
 
-/* --- Layout Scaffolding --- */
+/* --- Laptop Grid & Layout Scaffolding --- */
 .container {
-    width: 88%;
-    max-width: 1100px;
+    width: 90%;
+    max-width: 1040px; /* Locked desktop horizontal envelope boundary */
     margin: 0 auto;
-    padding: 50px 0; /* Tightened container margins */
+    padding: 50px 0; 
 }
 
 .slide {
@@ -91,7 +92,7 @@ body {
     position: fixed;
     top: 0;
     right: 0;
-    padding: 30px 6% 0 0; 
+    padding: 35px 6% 0 0; 
     z-index: 1000;
 }
 
@@ -131,17 +132,17 @@ body {
     width: 100%;
 }
 
-/* --- Slide 1: Identity & Central Layout Structure --- */
+/* --- Slide 1: Laptop Center-Aligned Layout --- */
 .section-about {
     background: radial-gradient(circle at 50% 45%, #16223F 0%, var(--bg-navy-dark) 80%);
 }
 
 .container-about-centered {
-    max-width: 850px;
+    max-width: 800px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -4vh; 
+    margin-top: -3vh; /* Locks layout alignment above center fold on screen */
 }
 
 .about-hero-center {
@@ -149,12 +150,12 @@ body {
     width: 100%;
 }
 
-/* Identity Name Block Styling */
+/* Identity Name Block Area */
 .identity-block {
-    display: inline-block;
+    display: block;
     position: relative;
     width: 100%;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .primary-name {
@@ -168,10 +169,10 @@ body {
     display: inline-block;
 }
 
-/* Shifts BFA directly underneath the end profile of the name heading */
+/* Keeps the BFA element stuck perfectly on the bottom-right baseline of your name */
 .academic-title-wrap {
     text-align: right;
-    max-width: 590px; /* Matches perfectly to name footprint limits */
+    max-width: 590px; /* Locks right alignment to match name dimensions */
     margin: 2px auto 0 auto;
 }
 
@@ -184,7 +185,7 @@ body {
     display: inline-block;
 }
 
-/* Contact Strip Metrics (+2pt Sizing Scale Increase) */
+/* Contact Strip Metrics (+2pt Visual Scale Increase) */
 .contact-data-strip {
     display: flex;
     align-items: center;
@@ -197,6 +198,7 @@ body {
     font-size: 1.12rem; 
     letter-spacing: 0.5px;
     color: var(--text-silver-bright);
+    white-space: nowrap; /* Prevents values from breaking into odd double lines on small laptops */
 }
 
 .underlined-link {
@@ -225,19 +227,19 @@ body {
     height: 12px;
 }
 
-/* Profession Title matched completely to Name metrics & set to Bold-Italic */
+/* Bold/Italic Title Component Matched exactly to Name Header Size */
 .profession-italic-title {
     margin-bottom: 12px;
     font-family: var(--font-body);
-    font-size: 1.9rem; /* Exactly matched to primary name size scale */
-    font-weight: 700;  /* Bolded as required */
+    font-size: 1.9rem; 
+    font-weight: 700;  
     letter-spacing: 3px;
     color: var(--olive-lettering);
     text-transform: uppercase;
     font-style: italic; 
 }
 
-/* Fine-lined Section Dividers */
+/* Compact Section Dividers */
 .section-divider {
     width: 50px;
     height: 1px;
@@ -249,7 +251,7 @@ body {
     margin: 12px auto 20px auto;
 }
 
-/* Combined Body Summary Line Layout */
+/* Compressed Text Line Paragraph Limits */
 .unified-body-text {
     font-size: 0.95rem;
     max-width: 720px;
@@ -259,7 +261,7 @@ body {
     color: var(--text-silver-muted);
 }
 
-/* Credentials Footer */
+/* Credentials Footer Links Area */
 .credentials-footer {
     margin-top: 12px;
 }
@@ -290,7 +292,7 @@ body {
     color: var(--text-silver-bright);
 }
 
-/* --- Slide 2: Single Column Portfolio Layout --- */
+/* --- Slide 2: Strict Single-Column Portfolio Grid --- */
 .section-portfolio {
     background-color: #080C17;
     border-top: 1px solid rgba(148, 163, 184, 0.04);
@@ -322,12 +324,12 @@ body {
     color: var(--text-silver-muted);
 }
 
-/* Strict 1-Column Grid Setup */
+/* Fixed 1-Column Layout: Prevents cards from creating asymmetric rows on laptop windows */
 .portfolio-grid-single-vertical {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 35px;
-    max-width: 750px;
+    max-width: 720px; /* Strict content width envelope */
     margin: 0 auto;
 }
 
@@ -336,6 +338,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.03);
     border-radius: 4px;
     overflow: hidden;
+    width: 100%;
     transition: var(--transition-smooth);
 }
 
@@ -426,10 +429,10 @@ body {
     cursor: default; 
 }
 
-/* --- Fluid Screen Adaptations --- */
+/* --- Responsive Media Injections (Ensuring Safety constraints remain intact) --- */
 @media (max-width: 1024px) {
     .bg-image-wrapper {
-        display: none; 
+        display: none; /* Safely hides mock frames on compact devices to preserve legibility */
     }
 }
 
