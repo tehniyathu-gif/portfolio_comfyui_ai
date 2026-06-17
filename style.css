@@ -32,20 +32,22 @@ body {
     background-color: var(--bg-navy-dark);
     color: var(--text-silver-muted);
     line-height: 1.5; 
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased; /* Preserves crisp, uniform line weights */
+    width: 1200px; /* Rigidly forces body canvas width footprint */
+    margin: 0 auto;
+    overflow-x: auto; /* Allows horizontal panning if native laptop zoom shifts scale */
+    -webkit-font-smoothing: antialiased; 
 }
 
-/* --- Laptop Grid & Layout Scaffolding --- */
+/* --- Rigid Layout Scaffolding --- */
 .container {
-    width: 90%;
-    max-width: 1040px; /* Locked desktop horizontal envelope boundary */
+    width: 1040px; /* Fixed sizing prevents horizontal wrapping changes */
     margin: 0 auto;
     padding: 50px 0; 
 }
 
 .slide {
     min-height: 100vh;
+    width: 1200px;
     display: flex;
     align-items: center;
     position: relative;
@@ -53,7 +55,7 @@ body {
     z-index: 10;
 }
 
-/* --- Integrated Background Art Slot Framework --- */
+/* --- Background Art Slot Framework --- */
 .bg-image-wrapper {
     position: absolute;
     width: 300px;
@@ -79,20 +81,20 @@ body {
 
 .bg-slot-1 {
     top: 12%;
-    left: 4%;
+    left: 45px;
 }
 
 .bg-slot-2 {
     top: 52%;
-    right: 4%;
+    right: 45px;
 }
 
-/* --- Top Right Header Navigation --- */
+/* --- Fixed Header Navigation Positioned exactly as seen on Laptop --- */
 .navbar-right {
-    position: fixed;
+    position: absolute; /* Replaced fixed mapping to avoid floating alignment breakdown on scaling zooms */
     top: 0;
-    right: 0;
-    padding: 35px 6% 0 0; 
+    right: 80px;
+    padding-top: 35px;
     z-index: 1000;
 }
 
@@ -132,17 +134,17 @@ body {
     width: 100%;
 }
 
-/* --- Slide 1: Laptop Center-Aligned Layout --- */
+/* --- Slide 1: Absolute Center Layout Matrix --- */
 .section-about {
     background: radial-gradient(circle at 50% 45%, #16223F 0%, var(--bg-navy-dark) 80%);
 }
 
 .container-about-centered {
-    max-width: 800px;
+    width: 800px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -3vh; /* Locks layout alignment above center fold on screen */
+    margin-top: -3vh; 
 }
 
 .about-hero-center {
@@ -169,10 +171,10 @@ body {
     display: inline-block;
 }
 
-/* Keeps the BFA element stuck perfectly on the bottom-right baseline of your name */
+/* Explicit width lock holds BFA perfectly to the baseline edge of the text above */
 .academic-title-wrap {
     text-align: right;
-    max-width: 590px; /* Locks right alignment to match name dimensions */
+    width: 590px; 
     margin: 2px auto 0 auto;
 }
 
@@ -198,7 +200,7 @@ body {
     font-size: 1.12rem; 
     letter-spacing: 0.5px;
     color: var(--text-silver-bright);
-    white-space: nowrap; /* Prevents values from breaking into odd double lines on small laptops */
+    white-space: nowrap; /* Rigid constraint block against breaking layout strings */
 }
 
 .underlined-link {
@@ -227,7 +229,7 @@ body {
     height: 12px;
 }
 
-/* Bold/Italic Title Component Matched exactly to Name Header Size */
+/* Bold/Italic Profession Title Component */
 .profession-italic-title {
     margin-bottom: 12px;
     font-family: var(--font-body);
@@ -251,10 +253,10 @@ body {
     margin: 12px auto 20px auto;
 }
 
-/* Compressed Text Line Paragraph Limits */
+/* Compressed Body Summary Text Block */
 .unified-body-text {
     font-size: 0.95rem;
-    max-width: 720px;
+    width: 720px;
     margin: 0 auto;
     letter-spacing: 0.5px;
     line-height: 1.6;
@@ -318,18 +320,18 @@ body {
 .portfolio-info-matter {
     text-align: center;
     font-size: 0.88rem;
-    max-width: 650px;
+    width: 650px;
     margin: 0 auto 30px auto;
     line-height: 1.5;
     color: var(--text-silver-muted);
 }
 
-/* Fixed 1-Column Layout: Prevents cards from creating asymmetric rows on laptop windows */
+/* Rigid Single Column Layout Framework */
 .portfolio-grid-single-vertical {
     display: flex;
     flex-direction: column;
     gap: 35px;
-    max-width: 720px; /* Strict content width envelope */
+    width: 720px; 
     margin: 0 auto;
 }
 
@@ -338,7 +340,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.03);
     border-radius: 4px;
     overflow: hidden;
-    width: 100%;
+    width: 720px;
     transition: var(--transition-smooth);
 }
 
@@ -429,41 +431,4 @@ body {
     cursor: default; 
 }
 
-/* --- Responsive Media Injections (Ensuring Safety constraints remain intact) --- */
-@media (max-width: 1024px) {
-    .bg-image-wrapper {
-        display: none; /* Safely hides mock frames on compact devices to preserve legibility */
-    }
-}
-
-@media (max-width: 768px) {
-    .navbar-right {
-        position: absolute;
-        top: 0;
-        right: auto;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 20px 0 0 0;
-    }
-    
-    .contact-data-strip {
-        flex-direction: column;
-        gap: 6px;
-    }
-    
-    .inline-vertical-divider {
-        display: none;
-    }
-    
-    .primary-name, .profession-italic-title {
-        font-size: 1.5rem;
-    }
-    
-    .academic-title-wrap {
-        text-align: center;
-    }
-    
-    .container {
-        padding: 40px 0;
-    }
-}
+/* REMOVED ALL RESPONSIVE @MEDIA QUERY BREAKPOINTS TO PREVENT CHANGES ON MOBILE CONTROLS */
