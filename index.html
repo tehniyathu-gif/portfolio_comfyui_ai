@@ -7,76 +7,81 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=Syncopate:wght@700&family=Tenor+Sans&display=swap" rel="stylesheet">
-    <style>
-        /* Self-contained styling for your personal contact details */
-        .personal-contact-info {
-            margin: 25px 0 35px 0;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-        }
-        .contact-item {
-            margin-bottom: 8px;
-            color: var(--text-silver-bright);
-        }
-        .contact-item span {
-            color: var(--olive-lettering);
-        }
-        .contact-item a {
-            color: var(--text-silver-bright);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        .contact-item a:hover {
-            color: var(--olive-lettering);
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Tenor+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header class="navbar">
+    <div class="bg-image-wrapper bg-slot-1">
+        <div class="bg-image-placeholder">[ BG IMAGE PLACEHOLDER 01 ]</div>
+    </div>
+
+    <header class="navbar-right">
         <nav>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
+                <li><a href="#about">Related</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="about" class="slide section-about">
-        <div class="container container-about">
-            <div class="about-hero">
-                <h1 style="font-size: 1.5rem; letter-spacing: 3px; text-transform: uppercase; color: var(--text-silver-muted); margin-bottom: 10px;">Tehniyath Unnisa Begum</h1>
-                <h1><span class="serif-text">ComfyUI</span> <span class="accent-text">AI Artist</span></h1>
-                <div class="divider"></div>
+        <div class="container container-about-centered">
+            <div class="about-hero-center">
                 
-                <p class="lead-text">
-                    Welcome to the intersection of advanced neural node architectures and digital art direction, showcasing high-fidelity concepts engineered entirely via ComfyUI.
-                </p>
-                
-                <p class="body-text">
-                    I build custom Stable Diffusion pipelines with precise ControlNet and IP-Adapter routing for consistent assets across props, scenery, and animation.
-                </p>
-
-                <div class="personal-contact-info">
-                    <div class="contact-item"><span>M.</span> +91 9441361562</div>
-                    <div class="contact-item"><span>E.</span> <a href="mailto:tehniyathunnisa.official@gmail.com">tehniyathunnisa.official@gmail.com</a></div>
+                <div class="identity-block">
+                    <h1 class="primary-name">Tehniyath Unnisa Begum</h1>
+                    <div class="academic-title-wrap">
+                        <span class="academic-title">BFA</span>
+                    </div>
                 </div>
 
-                <div class="cta-group">
-                    <a href="#portfolio" class="btn-primary">Explore Generation Gallery</a>
+                <div class="contact-data-strip">
+                    <span class="contact-item"><b>+91 9441361562</b></span>
+                    <span class="inline-vertical-divider"></span>
+                    <span class="contact-item"><a href="mailto:tehniyathunnisa.official@gmail.com" class="underlined-link"><b>tehniyathunnisa.official@gmail.com</b></a></span>
                 </div>
+
+                <div class="profession-italic-title">
+                    ComfyUI AI Artist
+                </div>
+
+                <div class="section-divider"></div>
+                
+                <p class="unified-body-text">
+                    Welcome to the intersection of advanced neural node architectures and digital art direction, showcasing high-fidelity concepts engineered entirely via ComfyUI. I build custom Stable Diffusion pipelines with precise ControlNet and IP-Adapter routing for consistent assets across props, scenery, and animation.
+                </p>
+
+                <div class="section-divider"></div>
+
+                <div class="credentials-footer">
+                    <p class="footer-prompt"><b>For more details about me please visit the following:</b></p>
+                    <div class="links-strip">
+                        <a href="#" class="credential-link underlined-link">Resume</a>
+                        <span class="inline-vertical-divider mini"></span>
+                        <a href="#" class="credential-link underlined-link">Curriculum Vitae</a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
+
+    <div class="bg-image-wrapper bg-slot-2">
+        <div class="bg-image-placeholder">[ BG IMAGE PLACEHOLDER 02 ]</div>
+    </div>
 
     <section id="portfolio" class="slide section-portfolio">
         <div class="container">
             <h2 class="section-title">ComfyUI Generations</h2>
             <p class="section-subtitle">Node-controlled outputs across props, custom environments, and dynamic temporal videos.</p>
-            <div class="divider center"></div>
             
-            <div class="portfolio-grid-2x3">
+            <div class="section-divider center"></div>
+            <p class="portfolio-info-matter">
+                The collection below displays production-ready iterative layers. Each specific column asset tracks explicit visual parameters, keeping strict adherence to target aesthetic direction and continuity grids.
+            </p>
+            
+            <div class="portfolio-grid-single-vertical">
+                
                 <div class="card" data-category="props">
                     <div class="card-media-placeholder">
                         <span class="category-tag">Prop Asset</span>
@@ -85,17 +90,6 @@
                     <div class="card-content">
                         <h3>Iterative Prop Generation 01</h3>
                         <p>High-fidelity hard surface model reference generated using multi-angle ControlNet depth maps.</p>
-                    </div>
-                </div>
-
-                <div class="card" data-category="props">
-                    <div class="card-media-placeholder">
-                        <span class="category-tag">Prop Asset</span>
-                        <div class="placeholder-icon">⚔️</div>
-                    </div>
-                    <div class="card-content">
-                        <h3>Iterative Prop Generation 02</h3>
-                        <p>Textured fantasy element keeping strict structural continuity through custom IP-Adapter masking.</p>
                     </div>
                 </div>
 
@@ -110,17 +104,6 @@
                     </div>
                 </div>
 
-                <div class="card" data-category="scenery">
-                    <div class="card-media-placeholder">
-                        <span class="category-tag">Scenery</span>
-                        <div class="placeholder-icon">🏛️</div>
-                    </div>
-                    <div class="card-content">
-                        <h3>Cinematic Environment 02</h3>
-                        <p>Complex architectural render balancing perfect perspective matching and historical design styles.</p>
-                    </div>
-                </div>
-
                 <div class="card" data-category="video">
                     <div class="card-media-placeholder">
                         <span class="category-tag video-tag">AnimateDiff Video</span>
@@ -132,17 +115,12 @@
                     </div>
                 </div>
 
-                <div class="card" data-category="video">
-                    <div class="card-media-placeholder">
-                        <span class="category-tag video-tag">AnimateDiff Video</span>
-                        <div class="placeholder-icon">🎥</div>
-                    </div>
-                    <div class="card-content">
-                        <h3>Temporal Generation 02</h3>
-                        <p>Multi-frame upscale test leveraging layered KSampler passes for pristine structural tracking.</p>
-                    </div>
-                </div>
             </div>
+
+            <div class="portfolio-footer-cta">
+                <div class="btn-primary-unlinked">Explore Generation Gallery</div>
+            </div>
+
         </div>
     </section>
 
