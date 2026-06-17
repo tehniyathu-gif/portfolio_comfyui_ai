@@ -2,12 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1200, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Tehniyath Unnisa Begum | ComfyUI AI Artist Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Tenor+Sans&display=swap" rel="stylesheet">
+
+    <script>
+        function fixMobileViewport() {
+            var width = 1200; // Your explicit laptop viewport width
+            var screenWidth = window.screen.width;
+            if (screenWidth < width) {
+                var scale = screenWidth / width;
+                var metaViewport = document.querySelector('meta[name="viewport"]');
+                metaViewport.setAttribute('content', 'width=' + width + ', initial-scale=' + scale + ', minimum-scale=' + scale + ', maximum-scale=5.0, user-scalable=yes');
+            }
+        }
+        window.addEventListener('resize', fixMobileViewport);
+        fixMobileViewport();
+    </script>
 </head>
 <body>
 
