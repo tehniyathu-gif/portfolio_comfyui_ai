@@ -1,16 +1,15 @@
 /* --- Global Variables Configuration --- */
 :root {
-    --bg-navy-dark: #0A0F1D;        /* Rich, deep primary navy dark blue background */
-    --bg-card-navy: #131B2E;        /* Lighter navy base for card wrappers */
+    --bg-navy-dark: #0A0F1D;        
+    --bg-card-navy: #131B2E;        
     
-    --text-silver-bright: #E2E8F0;  /* High-end bright silver for primary headers */
-    --text-silver-muted: #94A3B8;   /* Soft matte silver for standard descriptive lettering */
+    --text-silver-bright: #E2E8F0;  
+    --text-silver-muted: #94A3B8;   
     
-    --olive-contrast: #829A44;      /* Light olive green for crisp element contrast */
-    --olive-lettering: #A3BF5C;     /* Brightened olive green specifically chosen for readable lettering */
-    --olive-hover: #607232;         /* Deep olive transition state */
+    --olive-contrast: #829A44;      
+    --olive-lettering: #A3BF5C;     
+    --olive-hover: #607232;         
     
-    /* Font stacks locked with clean system fallbacks to preserve browser spacing */
     --font-heading: 'Syncopate', BlinkMacSystemFont, "Segoe UI", sans-serif;                   
     --font-body: 'Tenor Sans', Helvetica, Arial, sans-serif;                     
     --transition-smooth: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
@@ -32,15 +31,16 @@ body {
     background-color: var(--bg-navy-dark);
     color: var(--text-silver-muted);
     line-height: 1.5; 
-    width: 1200px; /* Rigidly forces body canvas width footprint */
+    width: 1200px; /* Rigidly freezes width canvas layout */
     margin: 0 auto;
-    overflow-x: auto; /* Allows horizontal panning if native laptop zoom shifts scale */
     -webkit-font-smoothing: antialiased; 
+    -webkit-text-size-adjust: none; /* CRITICAL: Disables mobile safari text auto-enlargement */
+    text-size-adjust: none;         /* Disables android chrome font mutation scales */
 }
 
 /* --- Rigid Layout Scaffolding --- */
 .container {
-    width: 1040px; /* Fixed sizing prevents horizontal wrapping changes */
+    width: 1040px; 
     margin: 0 auto;
     padding: 50px 0; 
 }
@@ -91,7 +91,7 @@ body {
 
 /* --- Fixed Header Navigation Positioned exactly as seen on Laptop --- */
 .navbar-right {
-    position: absolute; /* Replaced fixed mapping to avoid floating alignment breakdown on scaling zooms */
+    position: absolute; 
     top: 0;
     right: 80px;
     padding-top: 35px;
@@ -200,7 +200,7 @@ body {
     font-size: 1.12rem; 
     letter-spacing: 0.5px;
     color: var(--text-silver-bright);
-    white-space: nowrap; /* Rigid constraint block against breaking layout strings */
+    white-space: nowrap; 
 }
 
 .underlined-link {
@@ -431,4 +431,4 @@ body {
     cursor: default; 
 }
 
-/* REMOVED ALL RESPONSIVE @MEDIA QUERY BREAKPOINTS TO PREVENT CHANGES ON MOBILE CONTROLS */
+/* NO RESPONSIVE OR MEDIA QUERY BREAKPOINTS PERMITTED */
