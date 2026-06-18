@@ -30,32 +30,29 @@ body {
     font-family: var(--font-body);
     background-color: var(--bg-navy-dark);
     color: var(--text-silver-muted);
-    line-height: 1.5; 
-    width: 1200px; /* Rigidly freezes width canvas layout */
-    margin: 0 auto;
+    line-height: 1.6; 
+    overflow-x: hidden;
     -webkit-font-smoothing: antialiased; 
-    -webkit-text-size-adjust: none; /* CRITICAL: Disables mobile safari text auto-enlargement */
-    text-size-adjust: none;         /* Disables android chrome font mutation scales */
 }
 
-/* --- Rigid Layout Scaffolding --- */
+/* --- Structural Containers --- */
 .container {
-    width: 1040px; 
+    width: 90%;
+    max-width: 1040px; 
     margin: 0 auto;
-    padding: 50px 0; 
+    padding: 60px 0; 
 }
 
 .slide {
     min-height: 100vh;
-    width: 1200px;
     display: flex;
     align-items: center;
     position: relative;
-    padding-top: 40px;
+    padding-top: 60px;
     z-index: 10;
 }
 
-/* --- Background Art Slot Framework --- */
+/* --- Decorative Background Framework --- */
 .bg-image-wrapper {
     position: absolute;
     width: 300px;
@@ -79,22 +76,15 @@ body {
     text-transform: uppercase;
 }
 
-.bg-slot-1 {
-    top: 12%;
-    left: 45px;
-}
+.bg-slot-1 { top: 12%; left: 2%; }
+.bg-slot-2 { bottom: 8%; right: 2%; }
 
-.bg-slot-2 {
-    top: 52%;
-    right: 45px;
-}
-
-/* --- Fixed Header Navigation Positioned exactly as seen on Laptop --- */
+/* --- Top Navigation Header --- */
 .navbar-right {
-    position: absolute; 
+    position: fixed;
     top: 0;
-    right: 80px;
-    padding-top: 35px;
+    right: 0;
+    padding: 35px 6% 0 0; 
     z-index: 1000;
 }
 
@@ -108,7 +98,7 @@ body {
     font-family: var(--font-body);
     color: var(--text-silver-bright);
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 1.05rem; /* Increased font scale */
     letter-spacing: 2px;
     text-transform: uppercase;
     position: relative;
@@ -126,81 +116,72 @@ body {
     transition: var(--transition-smooth);
 }
 
-.nav-links a:hover {
-    color: var(--olive-lettering);
-}
+.nav-links a:hover { color: var(--olive-lettering); }
+.nav-links a:hover::after { width: 100%; }
 
-.nav-links a:hover::after {
-    width: 100%;
-}
-
-/* --- Slide 1: Absolute Center Layout Matrix --- */
+/* --- Slide 1: About Left-Aligned Framework --- */
 .section-about {
-    background: radial-gradient(circle at 50% 45%, #16223F 0%, var(--bg-navy-dark) 80%);
+    background: radial-gradient(circle at 30% 45%, #16223F 0%, var(--bg-navy-dark) 85%);
 }
 
-.container-about-centered {
-    width: 800px;
+.container-about-left {
+    max-width: 850px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* Aligned systematically to the left edge */
     align-items: center;
-    margin-top: -3vh; 
+    margin-left: 10%; 
 }
 
-.about-hero-center {
-    text-align: center;
+.about-hero-left {
+    text-align: left; /* Shifted from center-aligned to crisp starting boundaries */
     width: 100%;
 }
 
-/* Identity Name Block Area */
 .identity-block {
     display: block;
     position: relative;
     width: 100%;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
 .primary-name {
     font-family: var(--font-body);
-    font-size: 1.9rem; 
+    font-size: 2.35rem; /* Increased font size to decrease negative space */
     font-weight: 500;
     letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--text-silver-bright);
     line-height: 1.1;
-    display: inline-block;
+    display: block;
 }
 
-/* Explicit width lock holds BFA perfectly to the baseline edge of the text above */
+/* Aligning B.F.A. tag cleanly underneath the text baseline starting boundary */
 .academic-title-wrap {
-    text-align: right;
-    width: 590px; 
-    margin: 2px auto 0 auto;
+    text-align: left;
+    margin-top: 4px;
 }
 
 .academic-title {
     font-family: var(--font-heading);
-    font-size: 0.8rem;
-    letter-spacing: 1.5px;
+    font-size: 0.95rem; /* Increased font size */
+    letter-spacing: 2px;
     color: var(--olive-lettering);
     font-weight: 700;
     display: inline-block;
 }
 
-/* Contact Strip Metrics (+2pt Visual Scale Increase) */
 .contact-data-strip {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 16px;
-    margin: 12px 0; 
+    justify-content: flex-start; /* Left aligned starting frame */
+    gap: 20px;
+    margin: 16px 0; 
 }
 
 .contact-item {
-    font-size: 1.12rem; 
+    font-size: 1.25rem; /* Increased font size */
     letter-spacing: 0.5px;
     color: var(--text-silver-bright);
-    white-space: nowrap; 
 }
 
 .underlined-link {
@@ -209,31 +190,24 @@ body {
     transition: var(--transition-smooth);
 }
 
-.contact-item a {
-    color: var(--text-silver-bright);
-}
-
-.contact-item a:hover {
-    color: var(--olive-lettering);
-}
+.contact-item a { color: var(--text-silver-bright); }
+.contact-item a:hover { color: var(--olive-lettering); }
 
 .inline-vertical-divider {
     width: 1px;
-    height: 18px;
+    height: 20px;
     background-color: var(--olive-contrast);
     opacity: 0.6;
     display: inline-block;
 }
 
-.inline-vertical-divider.mini {
-    height: 12px;
-}
+.inline-vertical-divider.mini { height: 14px; }
 
-/* Bold/Italic Profession Title Component */
+/* Profession Title matched precisely to Name Font Weight parameters */
 .profession-italic-title {
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     font-family: var(--font-body);
-    font-size: 1.9rem; 
+    font-size: 2.35rem; /* Matched to primary name scale to drop open void space */
     font-weight: 700;  
     letter-spacing: 3px;
     color: var(--olive-lettering);
@@ -241,98 +215,87 @@ body {
     font-style: italic; 
 }
 
-/* Compact Section Dividers */
 .section-divider {
-    width: 50px;
+    width: 60px;
     height: 1px;
     background-color: rgba(148, 163, 184, 0.2);
-    margin: 12px auto;
+    margin: 16px 0; /* Changed from auto centered margins to uniform left side boundaries */
 }
 
-.section-divider.center {
-    margin: 12px auto 20px auto;
-}
-
-/* Compressed Body Summary Text Block */
 .unified-body-text {
-    font-size: 0.95rem;
-    width: 720px;
-    margin: 0 auto;
+    font-size: 1.12rem; /* Increased body text tracking weight to absorb space cleanly */
+    max-width: 760px;
+    margin: 0;
     letter-spacing: 0.5px;
-    line-height: 1.6;
+    line-height: 1.7;
     color: var(--text-silver-muted);
 }
 
-/* Credentials Footer Links Area */
-.credentials-footer {
-    margin-top: 12px;
-}
+.credentials-footer { margin-top: 16px; }
 
 .footer-prompt {
-    font-size: 0.82rem;
+    font-size: 0.95rem; /* Increased font size */
     letter-spacing: 1px;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     color: var(--text-silver-muted);
 }
 
 .links-strip {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 12px;
+    justify-content: flex-start; /* Aligned left */
+    gap: 16px;
 }
 
 .credential-link {
     font-family: var(--font-body);
-    font-size: 0.85rem;
+    font-size: 1rem; /* Increased font size */
     text-transform: uppercase;
     letter-spacing: 1.5px;
     color: var(--olive-lettering);
 }
 
-.credential-link:hover {
-    color: var(--text-silver-bright);
-}
+.credential-link:hover { color: var(--text-silver-bright); }
 
-/* --- Slide 2: Strict Single-Column Portfolio Grid --- */
+/* --- Slide 2: Portfolio Elements --- */
 .section-portfolio {
     background-color: #080C17;
     border-top: 1px solid rgba(148, 163, 184, 0.04);
 }
 
+.container-portfolio-left {
+    text-align: left;
+}
+
 .section-title {
     font-family: var(--font-heading);
     color: var(--text-silver-bright);
-    font-size: 2rem;
+    font-size: 2.4rem; /* Increased title layout visibility scale */
     letter-spacing: 5px;
     text-transform: uppercase;
-    text-align: center;
 }
 
 .section-subtitle {
     font-family: var(--font-body);
-    text-align: center;
-    font-size: 0.9rem;
-    margin-top: 6px;
+    font-size: 1.1rem; /* Increased subtitle font size */
+    margin-top: 8px;
     letter-spacing: 1px;
 }
 
 .portfolio-info-matter {
-    text-align: center;
-    font-size: 0.88rem;
-    width: 650px;
-    margin: 0 auto 30px auto;
-    line-height: 1.5;
+    font-size: 1.05rem; /* Increased detail text parameters */
+    max-width: 720px;
+    margin: 0 0 40px 0; /* Cleared horizontal balancing layout steps */
+    line-height: 1.6;
     color: var(--text-silver-muted);
 }
 
-/* Rigid Single Column Layout Framework */
 .portfolio-grid-single-vertical {
     display: flex;
     flex-direction: column;
-    gap: 35px;
-    width: 720px; 
-    margin: 0 auto;
+    gap: 40px;
+    max-width: 760px; 
+    margin: 0; /* Left aligned layout boundary anchor */
 }
 
 .card {
@@ -340,7 +303,6 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.03);
     border-radius: 4px;
     overflow: hidden;
-    width: 720px;
     transition: var(--transition-smooth);
 }
 
@@ -352,7 +314,7 @@ body {
 
 .card-media-placeholder {
     background-color: #0D1424;
-    height: 200px; 
+    height: 240px; /* Enhanced height metrics to use more canvas real estate */
     position: relative;
     display: flex;
     align-items: center;
@@ -362,14 +324,14 @@ body {
 
 .category-tag {
     position: absolute;
-    top: 12px;
-    left: 12px;
+    top: 14px;
+    left: 14px;
     background-color: rgba(10, 15, 29, 0.85);
     border: 1px solid var(--text-silver-muted);
     color: var(--text-silver-bright);
-    font-size: 0.65rem;
+    font-size: 0.75rem; /* Increased tag sizing scale */
     text-transform: uppercase;
-    padding: 3px 8px;
+    padding: 4px 10px;
     letter-spacing: 1px;
     border-radius: 2px;
 }
@@ -380,7 +342,7 @@ body {
 }
 
 .placeholder-icon {
-    font-size: 2.5rem; 
+    font-size: 3rem; /* Increased icon scaling profile */
     opacity: 0.2;
     transition: var(--transition-smooth);
 }
@@ -390,30 +352,28 @@ body {
     transform: scale(1.05);
 }
 
-.card-content {
-    padding: 20px;
-}
+.card-content { padding: 25px; } /* Richer interior boundaries layout */
 
 .card-content h3 {
     font-family: var(--font-body);
     color: var(--text-silver-bright);
-    font-size: 1.1rem;
-    margin-bottom: 6px;
+    font-size: 1.3rem; /* Scaled header text settings */
+    margin-bottom: 8px;
     font-weight: 500;
     letter-spacing: 1px;
 }
 
 .card-content p {
-    font-size: 0.85rem;
-    line-height: 1.5;
+    font-size: 1rem; /* Scaled paragraph sizes */
+    line-height: 1.6;
     letter-spacing: 0.5px;
 }
 
-/* Static Gallery Trigger Placeholder at Content Base */
 .portfolio-footer-cta {
     display: flex;
-    justify-content: center;
-    margin-top: 45px;
+    justify-content: flex-start; /* Trigger elements line up along start path lines */
+    margin-top: 50px;
+    margin-bottom: 60px;
 }
 
 .btn-primary-unlinked {
@@ -422,13 +382,70 @@ body {
     background-color: transparent;
     color: var(--olive-lettering);
     border: 1px solid var(--olive-contrast);
-    padding: 12px 30px;
-    font-size: 0.82rem;
+    padding: 14px 35px; /* Increased volume geometry scale */
+    font-size: 0.95rem; 
     font-weight: 500;
     letter-spacing: 2px;
     text-transform: uppercase;
     border-radius: 2px;
-    cursor: default; 
 }
 
-/* NO RESPONSIVE OR MEDIA QUERY BREAKPOINTS PERMITTED */
+/* --- Consolidated Single Line Footer Blueprint --- */
+.portfolio-absolute-footer {
+    width: 100%;
+    border-top: 1px solid rgba(148, 163, 184, 0.06);
+    padding-top: 25px;
+    margin-top: 20px;
+    text-align: left; /* Starts matching original alignment metrics */
+}
+
+.footer-fine-print {
+    font-size: 0.8rem; /* Explicitly styled small font variant */
+    letter-spacing: 1px;
+    color: var(--text-silver-muted);
+    opacity: 0.7;
+    white-space: nowrap; /* Forces details all into one fluid unified line */
+}
+
+/* --- Adaptive Device Media Conditions --- */
+@media (max-width: 1024px) {
+    .bg-image-wrapper { display: none; }
+}
+
+@media (max-width: 768px) {
+    .container-about-left {
+        margin-left: 5%;
+        max-width: 90%;
+    }
+    
+    .navbar-right {
+        position: absolute;
+        top: 0;
+        right: auto;
+        left: 5%;
+        transform: none;
+        padding: 25px 0 0 0;
+        text-align: left;
+    }
+
+    .nav-links {
+        justify-content: flex-start;
+        gap: 25px;
+    }
+    
+    .contact-data-strip {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .inline-vertical-divider { display: none; }
+    
+    .primary-name, .profession-italic-title {
+        font-size: 1.85rem;
+    }
+    
+    .footer-fine-print {
+        white-space: normal; /* Permits graceful wraparound strings only on tiny mobile devices to prevent breakages */
+    }
+}
