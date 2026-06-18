@@ -2,27 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1200, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tehniyath Unnisa Begum | ComfyUI AI Artist Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Tenor+Sans&display=swap" rel="stylesheet">
-
-    <script>
-        function fixMobileViewport() {
-            var width = 1200; // Your explicit laptop viewport width
-            var screenWidth = window.screen.width;
-            if (screenWidth < width) {
-                var scale = screenWidth / width;
-                var metaViewport = document.querySelector('meta[name="viewport"]');
-                metaViewport.setAttribute('content', 'width=' + width + ', initial-scale=' + scale + ', minimum-scale=' + scale + ', maximum-scale=5.0, user-scalable=yes');
-            }
-        }
-        window.addEventListener('resize', fixMobileViewport);
-        fixMobileViewport();
-    </script>
 </head>
 <body>
 
@@ -40,13 +25,13 @@
     </header>
 
     <section id="about" class="slide section-about">
-        <div class="container container-about-centered">
-            <div class="about-hero-center">
+        <div class="container container-about-left">
+            <div class="about-hero-left">
                 
                 <div class="identity-block">
                     <h1 class="primary-name">Tehniyath Unnisa Begum</h1>
                     <div class="academic-title-wrap">
-                        <span class="academic-title">BFA</span>
+                        <span class="academic-title">B.F.A.</span>
                     </div>
                 </div>
 
@@ -86,11 +71,12 @@
     </div>
 
     <section id="portfolio" class="slide section-portfolio">
-        <div class="container">
+        <div class="container container-portfolio-left">
             <h2 class="section-title">ComfyUI Generations</h2>
             <p class="section-subtitle">Node-controlled outputs across props, custom environments, and dynamic temporal videos.</p>
             
-            <div class="section-divider center"></div>
+            <div class="section-divider"></div>
+            
             <p class="portfolio-info-matter">
                 The collection below displays production-ready iterative layers. Each specific column asset tracks explicit visual parameters, keeping strict adherence to target aesthetic direction and continuity grids.
             </p>
@@ -135,6 +121,10 @@
             <div class="portfolio-footer-cta">
                 <div class="btn-primary-unlinked">Explore Generation Gallery</div>
             </div>
+
+            <footer class="portfolio-absolute-footer">
+                <span class="footer-fine-print">©2026 Tehniyath Unnisa Begum • ComfyUI Technical Portfolio Execution • All Rights Reserved</span>
+            </footer>
 
         </div>
     </section>
