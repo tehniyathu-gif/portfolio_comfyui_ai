@@ -52,6 +52,20 @@ body {
     z-index: 10;
 }
 
+/* --- Centered Block with Left-Aligned Content Text Engine --- */
+.container-centered-block {
+    display: flex;
+    justify-content: center; /* This perfectly centers the entire block on the monitor */
+    align-items: center;
+    width: 100%;
+}
+
+.content-left-aligned {
+    text-align: left; /* Forces every line to share the exact same starting point */
+    width: 100%;
+    max-width: 760px; /* Uniform width boundary across sections */
+}
+
 /* --- Decorative Background Framework --- */
 .bg-image-wrapper {
     position: absolute;
@@ -98,7 +112,7 @@ body {
     font-family: var(--font-body);
     color: var(--text-silver-bright);
     text-decoration: none;
-    font-size: 1.05rem; /* Increased font scale */
+    font-size: 1.1rem; /* Scaled up navigation links font size */
     letter-spacing: 2px;
     text-transform: uppercase;
     position: relative;
@@ -119,22 +133,9 @@ body {
 .nav-links a:hover { color: var(--olive-lettering); }
 .nav-links a:hover::after { width: 100%; }
 
-/* --- Slide 1: About Left-Aligned Framework --- */
+/* --- Slide 1: Identity & About Elements --- */
 .section-about {
-    background: radial-gradient(circle at 30% 45%, #16223F 0%, var(--bg-navy-dark) 85%);
-}
-
-.container-about-left {
-    max-width: 850px;
-    display: flex;
-    justify-content: flex-start; /* Aligned systematically to the left edge */
-    align-items: center;
-    margin-left: 10%; 
-}
-
-.about-hero-left {
-    text-align: left; /* Shifted from center-aligned to crisp starting boundaries */
-    width: 100%;
+    background: radial-gradient(circle at 50% 45%, #16223F 0%, var(--bg-navy-dark) 85%);
 }
 
 .identity-block {
@@ -146,7 +147,7 @@ body {
 
 .primary-name {
     font-family: var(--font-body);
-    font-size: 2.35rem; /* Increased font size to decrease negative space */
+    font-size: 2.6rem; /* Enriched font size to drop negative background voids */
     font-weight: 500;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -155,15 +156,14 @@ body {
     display: block;
 }
 
-/* Aligning B.F.A. tag cleanly underneath the text baseline starting boundary */
 .academic-title-wrap {
-    text-align: left;
-    margin-top: 4px;
+    text-align: left; /* Left starting point match */
+    margin-top: 6px;
 }
 
 .academic-title {
     font-family: var(--font-heading);
-    font-size: 0.95rem; /* Increased font size */
+    font-size: 1.05rem; /* Scaled up font */
     letter-spacing: 2px;
     color: var(--olive-lettering);
     font-weight: 700;
@@ -173,13 +173,13 @@ body {
 .contact-data-strip {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Left aligned starting frame */
+    justify-content: flex-start; 
     gap: 20px;
-    margin: 16px 0; 
+    margin: 18px 0; 
 }
 
 .contact-item {
-    font-size: 1.25rem; /* Increased font size */
+    font-size: 1.35rem; /* Increased font scale */
     letter-spacing: 0.5px;
     color: var(--text-silver-bright);
 }
@@ -195,7 +195,7 @@ body {
 
 .inline-vertical-divider {
     width: 1px;
-    height: 20px;
+    height: 22px;
     background-color: var(--olive-contrast);
     opacity: 0.6;
     display: inline-block;
@@ -203,11 +203,10 @@ body {
 
 .inline-vertical-divider.mini { height: 14px; }
 
-/* Profession Title matched precisely to Name Font Weight parameters */
 .profession-italic-title {
-    margin-bottom: 16px;
+    margin-bottom: 18px;
     font-family: var(--font-body);
-    font-size: 2.35rem; /* Matched to primary name scale to drop open void space */
+    font-size: 2.6rem; /* Scaled up to perfectly pair with primary header dimensions */
     font-weight: 700;  
     letter-spacing: 3px;
     color: var(--olive-lettering);
@@ -219,22 +218,22 @@ body {
     width: 60px;
     height: 1px;
     background-color: rgba(148, 163, 184, 0.2);
-    margin: 16px 0; /* Changed from auto centered margins to uniform left side boundaries */
+    margin: 18px 0; 
 }
 
 .unified-body-text {
-    font-size: 1.12rem; /* Increased body text tracking weight to absorb space cleanly */
-    max-width: 760px;
+    font-size: 1.2rem; /* Enhanced point metrics to minimize negative padding slots */
+    max-width: 100%;
     margin: 0;
     letter-spacing: 0.5px;
     line-height: 1.7;
     color: var(--text-silver-muted);
 }
 
-.credentials-footer { margin-top: 16px; }
+.credentials-footer { margin-top: 18px; }
 
 .footer-prompt {
-    font-size: 0.95rem; /* Increased font size */
+    font-size: 1.05rem; 
     letter-spacing: 1px;
     margin-bottom: 8px;
     color: var(--text-silver-muted);
@@ -243,13 +242,13 @@ body {
 .links-strip {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Aligned left */
+    justify-content: flex-start; 
     gap: 16px;
 }
 
 .credential-link {
     font-family: var(--font-body);
-    font-size: 1rem; /* Increased font size */
+    font-size: 1.1rem; 
     text-transform: uppercase;
     letter-spacing: 1.5px;
     color: var(--olive-lettering);
@@ -257,35 +256,31 @@ body {
 
 .credential-link:hover { color: var(--text-silver-bright); }
 
-/* --- Slide 2: Portfolio Elements --- */
+/* --- Slide 2: Portfolio Structural Grid --- */
 .section-portfolio {
     background-color: #080C17;
     border-top: 1px solid rgba(148, 163, 184, 0.04);
 }
 
-.container-portfolio-left {
-    text-align: left;
-}
-
 .section-title {
     font-family: var(--font-heading);
     color: var(--text-silver-bright);
-    font-size: 2.4rem; /* Increased title layout visibility scale */
+    font-size: 2.6rem; /* Larger balanced sizing */
     letter-spacing: 5px;
     text-transform: uppercase;
 }
 
 .section-subtitle {
     font-family: var(--font-body);
-    font-size: 1.1rem; /* Increased subtitle font size */
+    font-size: 1.2rem; 
     margin-top: 8px;
     letter-spacing: 1px;
 }
 
 .portfolio-info-matter {
-    font-size: 1.05rem; /* Increased detail text parameters */
-    max-width: 720px;
-    margin: 0 0 40px 0; /* Cleared horizontal balancing layout steps */
+    font-size: 1.15rem; 
+    max-width: 100%;
+    margin: 0 0 40px 0; 
     line-height: 1.6;
     color: var(--text-silver-muted);
 }
@@ -294,8 +289,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    max-width: 760px; 
-    margin: 0; /* Left aligned layout boundary anchor */
+    width: 100%; 
+    margin: 0; 
 }
 
 .card {
@@ -314,7 +309,7 @@ body {
 
 .card-media-placeholder {
     background-color: #0D1424;
-    height: 240px; /* Enhanced height metrics to use more canvas real estate */
+    height: 250px; /* Deeper canvas placeholder elements footprint */
     position: relative;
     display: flex;
     align-items: center;
@@ -329,9 +324,9 @@ body {
     background-color: rgba(10, 15, 29, 0.85);
     border: 1px solid var(--text-silver-muted);
     color: var(--text-silver-bright);
-    font-size: 0.75rem; /* Increased tag sizing scale */
+    font-size: 0.8rem; 
     text-transform: uppercase;
-    padding: 4px 10px;
+    padding: 4px 12px;
     letter-spacing: 1px;
     border-radius: 2px;
 }
@@ -342,7 +337,7 @@ body {
 }
 
 .placeholder-icon {
-    font-size: 3rem; /* Increased icon scaling profile */
+    font-size: 3.5rem; 
     opacity: 0.2;
     transition: var(--transition-smooth);
 }
@@ -352,26 +347,26 @@ body {
     transform: scale(1.05);
 }
 
-.card-content { padding: 25px; } /* Richer interior boundaries layout */
+.card-content { padding: 30px; } 
 
 .card-content h3 {
     font-family: var(--font-body);
     color: var(--text-silver-bright);
-    font-size: 1.3rem; /* Scaled header text settings */
+    font-size: 1.45rem; 
     margin-bottom: 8px;
     font-weight: 500;
     letter-spacing: 1px;
 }
 
 .card-content p {
-    font-size: 1rem; /* Scaled paragraph sizes */
+    font-size: 1.1rem; 
     line-height: 1.6;
     letter-spacing: 0.5px;
 }
 
 .portfolio-footer-cta {
     display: flex;
-    justify-content: flex-start; /* Trigger elements line up along start path lines */
+    justify-content: flex-start; 
     margin-top: 50px;
     margin-bottom: 60px;
 }
@@ -382,39 +377,37 @@ body {
     background-color: transparent;
     color: var(--olive-lettering);
     border: 1px solid var(--olive-contrast);
-    padding: 14px 35px; /* Increased volume geometry scale */
-    font-size: 0.95rem; 
+    padding: 16px 40px; 
+    font-size: 1.05rem; 
     font-weight: 500;
     letter-spacing: 2px;
     text-transform: uppercase;
     border-radius: 2px;
 }
 
-/* --- Consolidated Single Line Footer Blueprint --- */
+/* --- Clean Unified Single Line Fine-Print Footer Layout --- */
 .portfolio-absolute-footer {
     width: 100%;
     border-top: 1px solid rgba(148, 163, 184, 0.06);
     padding-top: 25px;
     margin-top: 20px;
-    text-align: left; /* Starts matching original alignment metrics */
 }
 
 .footer-fine-print {
-    font-size: 0.8rem; /* Explicitly styled small font variant */
-    letter-spacing: 1px;
+    font-size: 0.8rem; /* Small clean layout typography */
+    letter-spacing: 1.5px;
     color: var(--text-silver-muted);
-    opacity: 0.7;
-    white-space: nowrap; /* Forces details all into one fluid unified line */
+    opacity: 0.6;
+    white-space: nowrap; /* Keeps details elegantly positioned on a single line space */
 }
 
-/* --- Adaptive Device Media Conditions --- */
+/* --- Adaptive Device Transitions --- */
 @media (max-width: 1024px) {
     .bg-image-wrapper { display: none; }
 }
 
 @media (max-width: 768px) {
-    .container-about-left {
-        margin-left: 5%;
+    .content-left-aligned {
         max-width: 90%;
     }
     
@@ -425,7 +418,6 @@ body {
         left: 5%;
         transform: none;
         padding: 25px 0 0 0;
-        text-align: left;
     }
 
     .nav-links {
@@ -442,10 +434,10 @@ body {
     .inline-vertical-divider { display: none; }
     
     .primary-name, .profession-italic-title {
-        font-size: 1.85rem;
+        font-size: 1.9rem;
     }
     
     .footer-fine-print {
-        white-space: normal; /* Permits graceful wraparound strings only on tiny mobile devices to prevent breakages */
+        white-space: normal; /* Safe wrapping rule strictly on mobile screens to protect page scale boundaries */
     }
 }
