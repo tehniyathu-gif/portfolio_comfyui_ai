@@ -443,13 +443,14 @@ body {
         font-size: 0.95rem; 
     }
     
-    /* FIXED: Adjusted sizing to ensure typography fits flawlessly without crowding */
+    /* FIXED: Decreased size and prevented line wrapping so "Begum" fits seamlessly */
     .primary-name {
-        font-size: 1.35rem; 
+        font-size: 1.15rem; 
         letter-spacing: 1px;
         display: block;
         width: 100%;
         margin-bottom: 4px;
+        white-space: nowrap;
     }
 
     /* Scales down B.F.A font on phone screens while maintaining the global right-alignment */
