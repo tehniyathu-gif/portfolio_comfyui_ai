@@ -55,15 +55,15 @@ body {
 /* --- Centered Block with Left-Aligned Content Text Engine --- */
 .container-centered-block {
     display: flex;
-    justify-content: center; /* This perfectly centers the entire block on the monitor */
+    justify-content: center; 
     align-items: center;
     width: 100%;
 }
 
 .content-left-aligned {
-    text-align: left; /* Forces every line to share the exact same starting point */
+    text-align: left; 
     width: 100%;
-    max-width: 760px; /* Uniform width boundary across sections */
+    max-width: 760px; 
 }
 
 /* --- Decorative Background Framework --- */
@@ -112,7 +112,7 @@ body {
     font-family: var(--font-body);
     color: var(--text-silver-bright);
     text-decoration: none;
-    font-size: 1.1rem; /* Scaled up navigation links font size */
+    font-size: 1.1rem; 
     letter-spacing: 2px;
     text-transform: uppercase;
     position: relative;
@@ -147,7 +147,7 @@ body {
 
 .primary-name {
     font-family: var(--font-body);
-    font-size: 2.6rem; /* Enriched font size to drop negative background voids */
+    font-size: 2.6rem; 
     font-weight: 500;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -157,13 +157,13 @@ body {
 }
 
 .academic-title-wrap {
-    text-align: left; /* Left starting point match */
+    text-align: left; 
     margin-top: 6px;
 }
 
 .academic-title {
     font-family: var(--font-heading);
-    font-size: 1.05rem; /* Scaled up font */
+    font-size: 1.05rem; 
     letter-spacing: 2px;
     color: var(--olive-lettering);
     font-weight: 700;
@@ -179,7 +179,7 @@ body {
 }
 
 .contact-item {
-    font-size: 1.35rem; /* Increased font scale */
+    font-size: 1.35rem; 
     letter-spacing: 0.5px;
     color: var(--text-silver-bright);
 }
@@ -206,7 +206,7 @@ body {
 .profession-italic-title {
     margin-bottom: 18px;
     font-family: var(--font-body);
-    font-size: 2.6rem; /* Scaled up to perfectly pair with primary header dimensions */
+    font-size: 2.6rem; 
     font-weight: 700;  
     letter-spacing: 3px;
     color: var(--olive-lettering);
@@ -222,7 +222,7 @@ body {
 }
 
 .unified-body-text {
-    font-size: 1.2rem; /* Enhanced point metrics to minimize negative padding slots */
+    font-size: 1.2rem; 
     max-width: 100%;
     margin: 0;
     letter-spacing: 0.5px;
@@ -265,7 +265,7 @@ body {
 .section-title {
     font-family: var(--font-heading);
     color: var(--text-silver-bright);
-    font-size: 2.6rem; /* Larger balanced sizing */
+    font-size: 2.6rem; 
     letter-spacing: 5px;
     text-transform: uppercase;
 }
@@ -309,7 +309,7 @@ body {
 
 .card-media-placeholder {
     background-color: #0D1424;
-    height: 250px; /* Deeper canvas placeholder elements footprint */
+    height: 250px; 
     position: relative;
     display: flex;
     align-items: center;
@@ -385,7 +385,7 @@ body {
     border-radius: 2px;
 }
 
-/* --- Clean Unified Single Line Fine-Print Footer Layout --- */
+/* --- Clean Unified Fine-Print Footer Layout --- */
 .portfolio-absolute-footer {
     width: 100%;
     border-top: 1px solid rgba(148, 163, 184, 0.06);
@@ -394,11 +394,11 @@ body {
 }
 
 .footer-fine-print {
-    font-size: 0.8rem; /* Small clean layout typography */
+    font-size: 0.8rem; 
     letter-spacing: 1.5px;
     color: var(--text-silver-muted);
     opacity: 0.6;
-    white-space: nowrap; /* Keeps details elegantly positioned on a single line space */
+    white-space: nowrap; 
 }
 
 /* --- Adaptive Device Transitions --- */
@@ -406,24 +406,23 @@ body {
     .bg-image-wrapper { display: none; }
 }
 
-/* --- Mobile View Overrides (The Mobile "If Statement") --- */
+/* --- Mobile View Overrides --- */
 @media (max-width: 768px) {
     .container {
-        padding: 40px 0; /* Breathe a bit tighter on mobile heights */
+        padding: 40px 0; 
     }
 
     .slide {
-        min-height: auto; /* Prevent forcing desktop height limitations on mobile phone canvases */
+        min-height: auto; 
         padding-top: 80px; 
         padding-bottom: 40px;
     }
 
     .content-left-aligned {
-        max-width: 100%; /* Utilize the full screen width safely */
-        text-align: left; /* Lock strict left alignment alignment framework */
+        max-width: 100%; 
+        text-align: left; 
     }
     
-    /* Keep Nav Menu anchored beautifully to the right edge just like desktop, but with custom padding */
     .navbar-right {
         position: absolute;
         top: 0;
@@ -438,44 +437,51 @@ body {
     }
 
     .nav-links a {
-        font-size: 0.95rem; /* Shrink links slightly for compact mobile screens */
+        font-size: 0.95rem; 
     }
     
-    /* Font Size Fluidity Controls - Keeps text clean and prevents 3-line breaks */
+    /* Forces name completely onto 1 line on mobile */
     .primary-name {
-        font-size: 1.65rem; /* Reduced from 2.6rem to fit beautiful across phone widths */
-        letter-spacing: 1.5px;
+        font-size: 1.35rem; 
+        letter-spacing: 1px;
+        display: block;
+        width: 100%;
+    }
+
+    /* Slings B.F.A over to the right margin wall directly underneath the name */
+    .academic-title-wrap {
+        text-align: right; 
+        width: 100%;
+        margin-top: 4px;
+    }
+
+    .academic-title {
+        font-size: 0.85rem;
     }
 
     .profession-italic-title {
-        font-size: 1.65rem; /* Perfectly scales inline with primary header scaling overrides */
+        font-size: 1.65rem; 
         letter-spacing: 1.5px;
         margin-bottom: 12px;
     }
 
-    .academic-title {
-        font-size: 0.9rem;
-    }
-
     .unified-body-text {
-        font-size: 1.05rem; /* Balanced comfortable reading experience for hand-held screen layouts */
+        font-size: 1.05rem; 
     }
     
-    /* Contact and Links Alignment Framework */
     .contact-data-strip {
         flex-direction: column;
-        align-items: flex-start; /* Ensure things stack elegantly to the left margin wall */
+        align-items: flex-start; 
         gap: 6px;
         margin: 14px 0;
     }
 
     .contact-item {
-        font-size: 1.05rem; /* Lower sizing layout scales */
+        font-size: 1.05rem; 
     }
     
-    .inline-vertical-divider { display: none; } /* Safely hidden as items are stacked vertically */
+    .inline-vertical-divider { display: none; } 
     
-    /* Portfolio Layout Controls */
     .section-title {
         font-size: 1.65rem;
         letter-spacing: 2px;
@@ -491,7 +497,7 @@ body {
     }
 
     .card-media-placeholder {
-        height: 180px; /* Bring height down dynamically to secure mobile scroll paths */
+        height: 180px; 
     }
 
     .card-content {
@@ -509,12 +515,12 @@ body {
     .btn-primary-unlinked {
         padding: 14px 30px;
         font-size: 0.95rem;
-        width: 100%; /* Make button full width on phone screens for an easier click thumb zone */
+        width: 100%; 
         text-align: center;
     }
     
     .footer-fine-print {
-        white-space: normal; /* Permits details to gracefully wrap down safely without expanding screen widths */
+        white-space: normal; 
         font-size: 0.75rem;
         display: block;
         line-height: 1.4;
