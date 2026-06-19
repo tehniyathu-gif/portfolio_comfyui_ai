@@ -10,7 +10,7 @@
     --olive-lettering: #A3BF5C;     
     --olive-hover: #607232;         
     
-    --font-heading: 'Syncopate', BlinkMacSystemFont, "Segoe UI", sans-serif;                   
+    --font-heading: 'Syncopate', BlinkMacSystemFont, "Segoe UI", sans-serif;                    
     --font-body: 'Tenor Sans', Helvetica, Arial, sans-serif;                     
     --transition-smooth: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -411,7 +411,8 @@ body {
 /* --- Mobile View Overrides --- */
 @media (max-width: 768px) {
     .container {
-        padding: 40px 0; 
+        /* FIXED: Changed from '40px 0' to '40px 5%' to give breathing space on left/right edges */
+        padding: 40px 5%; 
     }
 
     .slide {
@@ -442,12 +443,13 @@ body {
         font-size: 0.95rem; 
     }
     
-    /* Forces name completely onto 1 line on mobile */
+    /* FIXED: Adjusted sizing to ensure typography fits flawlessly without crowding */
     .primary-name {
         font-size: 1.35rem; 
         letter-spacing: 1px;
         display: block;
         width: 100%;
+        margin-bottom: 4px;
     }
 
     /* Scales down B.F.A font on phone screens while maintaining the global right-alignment */
@@ -456,13 +458,15 @@ body {
     }
 
     .profession-italic-title {
-        font-size: 1.65rem; 
+        font-size: 1.5rem; /* FIXED: Marginally downscaled from 1.65rem for better balance */
         letter-spacing: 1.5px;
+        margin-top: 6px;
         margin-bottom: 12px;
     }
 
     .unified-body-text {
-        font-size: 1.05rem; 
+        font-size: 1rem; /* FIXED: Marginally downscaled from 1.05rem to make prose crisp and airy */
+        line-height: 1.6;
     }
     
     .contact-data-strip {
