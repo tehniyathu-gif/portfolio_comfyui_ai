@@ -559,7 +559,7 @@ body {
 }
 
 /* ==========================================================================
-   Ambient Moving Background Elements (Balanced High-Visibility Config)
+   Ambient Moving Background Elements (Multi-Orb Lighter Configuration)
    ========================================================================== */
 
 .ambient-bg-wrapper {
@@ -568,63 +568,99 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;                 /* Locked behind site content copy and cards */
+    z-index: -1;                 
     pointer-events: none;       
     overflow: hidden;
     background-color: transparent;
 }
 
-/* Deep, rich, organic digital hues with clean blending definitions */
+/* Base style setups for ambient lighter glow layers */
 .ambient-orb {
     position: absolute;
     border-radius: 50%;
-    filter: blur(80px);          /* Smooth gradient diffusion edge */
-    opacity: 0.14;               /* Solid opacity baseline so they stay distinctly visible */
-    mix-blend-mode: plus-lighter;/* Lets the soft colors stack cleanly on top of the dark theme colors */
-    background: radial-gradient(circle, #2563eb, #1d4ed8, transparent 75%); /* Royal Cobalt Blue */
+    filter: blur(90px);          
+    opacity: 0.16;               /* Lightened base mix layer */
+    mix-blend-mode: plus-lighter;
+}
+
+/* --- SHADE VARIATION ONE: Soft Ice Blue Elements --- */
+.orb-shade-ice {
+    background: radial-gradient(circle, #60a5fa, #3b82f6, transparent 70%);
 }
 
 .orb-one {
-    width: 440px;
-    height: 440px;
-    top: -5%;
+    width: 460px;
+    height: 460px;
+    top: -8%;
     right: -5%;
-    animation: slowDriftOne 16s ease-in-out infinite alternate; /* Clean, continuous sweeping motion */
+    animation: dynamicDriftOne 14s ease-in-out infinite alternate; 
+}
+
+.orb-three {
+    width: 320px;
+    height: 320px;
+    top: 45%;
+    right: 15%;
+    animation: dynamicDriftThree 18s ease-in-out infinite alternate;
+}
+
+/* --- SHADE VARIATION TWO: Vibrant Sky Cyan Elements --- */
+.orb-shade-cyan {
+    background: radial-gradient(circle, #38bdf8, #0ea5e9, transparent 70%);
 }
 
 .orb-two {
-    width: 380px;
-    height: 380px;
-    bottom: 5%;
+    width: 420px;
+    height: 420px;
+    bottom: -5%;
     left: -5%;
-    background: radial-gradient(circle, #3b82f6, #1e40af, transparent 75%); /* Lighter Sky Marine Blue */
-    animation: slowDriftTwo 14s ease-in-out infinite alternate;
+    animation: dynamicDriftTwo 12s ease-in-out infinite alternate;
 }
 
-/* Fluid Organic Wave Line Layer */
+.orb-four {
+    width: 340px;
+    height: 340px;
+    top: 15%;
+    left: 10%;
+    animation: dynamicDriftFour 16s ease-in-out infinite alternate;
+}
+
+/* Fluid Organic Morph Shape Layout */
 .ambient-squiggle {
     position: absolute;
-    width: 380px;
-    height: 340px;
-    top: 35%;
-    left: 20%;
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(29, 78, 216, 0.02));
-    filter: blur(55px);
+    width: 400px;
+    height: 350px;
+    top: 30%;
+    left: 25%;
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(96, 165, 250, 0.02));
+    filter: blur(60px);
     border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
-    animation: liquidMorph 12s ease-in-out infinite alternate;
+    animation: liquidMorph 10s ease-in-out infinite alternate;
 }
 
-/* Kinetic Motion Engines (Increased translation coordinates for visible tracking) */
-@keyframes slowDriftOne {
+/* High-Velocity Amplified Kinetic Motion Engines */
+@keyframes dynamicDriftOne {
     0% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(-100px, 80px) scale(1.1); } 
-    100% { transform: translate(50px, -30px) scale(0.95); }
+    50% { transform: translate(-160px, 120px) scale(1.15); } /* Expanded cross sweep */
+    100% { transform: translate(80px, -60px) scale(0.9); }
 }
 
-@keyframes slowDriftTwo {
-    0% { transform: translate(0, 0) scale(0.95); }
-    50% { transform: translate(90px, -90px) scale(1.15); } 
-    100% { transform: translate(-30px, 50px) scale(1); }
+@keyframes dynamicDriftTwo {
+    0% { transform: translate(0, 0) scale(0.9); }
+    50% { transform: translate(150px, -140px) scale(1.2); } 
+    100% { transform: translate(-60px, 80px) scale(0.95); }
+}
+
+@keyframes dynamicDriftThree {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-90px, -110px) scale(0.85); }
+    100% { transform: translate(110px, 70px) scale(1.1); }
+}
+
+@keyframes dynamicDriftFour {
+    0% { transform: translate(0, 0) scale(1.1); }
+    50% { transform: translate(130px, 90px) scale(0.9); }
+    100% { transform: translate(-110px, -120px) scale(1.05); }
 }
 
 @keyframes liquidMorph {
@@ -634,22 +670,23 @@ body {
     }
     50% {
         border-radius: 65% 35% 50% 50% / 55% 45% 55% 45%;
-        transform: rotate(45deg) scale(1.1); 
+        transform: rotate(60deg) scale(1.15); 
     }
     100% {
         border-radius: 50% 50% 35% 65% / 40% 60% 40% 60%;
-        transform: rotate(90deg) scale(0.95);
+        transform: rotate(120deg) scale(0.95);
     }
 }
 
-/* Responsive Structural Scaling for Mobile viewports */
+/* Responsive Container Adjustments for Mobile Displays */
 @media (max-width: 768px) {
     .ambient-bg-wrapper {
         width: 100vw;
         height: 100vh;
     }
-    .ambient-orb { filter: blur(50px); opacity: 0.12; }
-    .orb-one { width: 240px; height: 240px; top: 10%; right: -10%; }
-    .orb-two { width: 210px; height: 210px; bottom: 20%; left: -10%; }
-    .ambient-squiggle { width: 230px; height: 210px; filter: blur(35px); left: 15%; top: 35%; }
+    .ambient-orb { filter: blur(60px); opacity: 0.14; }
+    .orb-one { width: 250px; height: 250px; }
+    .orb-two { width: 220px; height: 220px; }
+    .orb-three, .orb-four { display: none; } /* Kept clean to avoid overcrowded tracking filters on tiny viewports */
+    .ambient-squiggle { width: 240px; height: 220px; filter: blur(40px); left: 10%; top: 35%; }
 }
