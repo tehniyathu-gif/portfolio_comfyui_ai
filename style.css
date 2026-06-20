@@ -108,9 +108,11 @@ body {
     gap: 35px;
 }
 
-.nav-links a {
+.nav-links a,
+.nav-links a:link,
+.nav-links a:visited {
     font-family: var(--font-body);
-    color: var(--text-silver-bright);
+    color: var(--text-silver-bright) !important;
     text-decoration: none;
     font-size: 1.1rem; 
     letter-spacing: 2px;
@@ -130,12 +132,13 @@ body {
     transition: var(--transition-smooth);
 }
 
-.nav-links a:hover { color: var(--olive-lettering); }
+.nav-links a:hover { color: var(--olive-lettering) !important; }
 .nav-links a:hover::after { width: 100%; }
 
 /* --- Slide 1: Identity & About Elements --- */
+/* MODIFIED: Replaced the bright radial gradient with the exact matching dark background value used in the portfolio section */
 .section-about {
-    background: radial-gradient(circle at 50% 45%, #16223F 0%, var(--bg-navy-dark) 85%);
+    background-color: #080C17;
 }
 
 .identity-block {
@@ -168,7 +171,6 @@ body {
     margin-left: 15px; 
 }
 
-/* MODIFIED: Adjusted bottom spacing after the contact detail block to 12px for perfect alignment symmetry */
 .contact-data-strip {
     display: flex;
     align-items: center;
@@ -236,7 +238,6 @@ body {
 
 .credentials-footer { margin-top: 18px; }
 
-/* MODIFIED: Set bottom margin specifically to 12px to stay visually equal with the layout spacing above */
 .footer-prompt {
     font-size: 1.05rem; 
     letter-spacing: 1px;
@@ -436,13 +437,16 @@ body {
         padding: 25px 0 0 0;
     }
 
+    .nav-links a,
+    .nav-links a:link,
+    .nav-links a:visited {
+        font-size: 0.8rem; 
+        color: var(--text-silver-bright) !important;
+    }
+
     .nav-links {
         justify-content: flex-end;
         gap: 15px; 
-    }
-
-    .nav-links a {
-        font-size: 0.8rem; 
     }
     
     .primary-name {
@@ -475,7 +479,6 @@ body {
         line-height: 1.6;
     }
     
-    /* MODIFIED: Preserved mobile-centric spacing parameters with 12px bottom space for continuous layout parity */
     .contact-data-strip {
         flex-direction: column;
         align-items: center; 
