@@ -1,4 +1,4 @@
-/* --- Global Variables Configuration --- */
+  /* --- Global Variables Configuration --- */
 :root {
     --bg-navy-dark: #0A0F1D;        
     --bg-card-navy: #131B2E;        
@@ -176,7 +176,6 @@ body {
     margin: 18px 0; 
 }
 
-/* MODIFIED: Safely scaled back baseline font weight to medium/semi-bold */
 .contact-item {
     font-size: 1.35rem; 
     letter-spacing: 0.5px;
@@ -444,7 +443,6 @@ body {
         font-size: 0.8rem; 
     }
     
-    /* RESTORED: Reset clamp scaling mechanics causing layouts to collapse */
     .primary-name {
         font-size: clamp(0.95rem, 4.2vw, 1.35rem); 
         letter-spacing: 1px;
@@ -461,11 +459,14 @@ body {
         margin-left: 8px;
     }
 
+    /* MODIFIED: Added center alignment specifically for your artist title line */
     .profession-italic-title {
         font-size: 1.5rem; 
         letter-spacing: 1.5px;
         margin-top: 6px;
         margin-bottom: 12px;
+        text-align: center;
+        width: 100%;
     }
 
     .unified-body-text {
@@ -473,15 +474,19 @@ body {
         line-height: 1.6;
     }
     
+    /* MODIFIED: Adjusted flex matching layout engine to cleanly align contact pieces across the center horizontal line space */
     .contact-data-strip {
         flex-direction: column;
-        align-items: flex-start; 
+        align-items: center; 
         gap: 6px;
         margin: 14px 0;
+        width: 100%;
+        text-align: center;
     }
 
     .contact-item {
         font-size: 1.05rem; 
+        width: 100%;
     }
     
     .inline-vertical-divider { display: none; } 
