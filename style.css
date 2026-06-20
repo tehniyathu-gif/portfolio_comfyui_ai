@@ -559,7 +559,7 @@ body {
 }
 
 /* ==========================================================================
-   Ambient Moving Background Elements (Pure CSS Configuration)
+   Ambient Moving Background Elements (Balanced High-Visibility Config)
    ========================================================================== */
 
 .ambient-bg-wrapper {
@@ -568,87 +568,88 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;                 /* Sent explicitly backward to prevent visual text block cuts */
+    z-index: -1;                 /* Locked behind site content copy and cards */
     pointer-events: none;       
     overflow: hidden;
     background-color: transparent;
 }
 
-/* Base style config for blurring soft gradient dots */
+/* Deep, rich, organic digital hues with clean blending definitions */
 .ambient-orb {
     position: absolute;
     border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.09;              /* Bumped up slightly so it stands out beautifully against the dark base */
-    background: radial-gradient(circle, #1d4ed8, #2563eb, transparent);
+    filter: blur(80px);          /* Smooth gradient diffusion edge */
+    opacity: 0.14;               /* Solid opacity baseline so they stay distinctly visible */
+    mix-blend-mode: plus-lighter;/* Lets the soft colors stack cleanly on top of the dark theme colors */
+    background: radial-gradient(circle, #2563eb, #1d4ed8, transparent 75%); /* Royal Cobalt Blue */
 }
 
 .orb-one {
-    width: 350px;
-    height: 350px;
+    width: 440px;
+    height: 440px;
     top: -5%;
-    right: -10%;
-    animation: slowDriftOne 22s ease-in-out infinite alternate;
+    right: -5%;
+    animation: slowDriftOne 16s ease-in-out infinite alternate; /* Clean, continuous sweeping motion */
 }
 
 .orb-two {
-    width: 300px;
-    height: 300px;
-    bottom: 10%;
-    left: -10%;
-    background: radial-gradient(circle, #1e40af, #3b82f6, transparent);
-    animation: slowDriftTwo 18s ease-in-out infinite alternate;
+    width: 380px;
+    height: 380px;
+    bottom: 5%;
+    left: -5%;
+    background: radial-gradient(circle, #3b82f6, #1e40af, transparent 75%); /* Lighter Sky Marine Blue */
+    animation: slowDriftTwo 14s ease-in-out infinite alternate;
 }
 
-/* Generative Liquid "Squiggle" Shape */
+/* Fluid Organic Wave Line Layer */
 .ambient-squiggle {
     position: absolute;
-    width: 320px;
-    height: 280px;
+    width: 380px;
+    height: 340px;
     top: 35%;
-    left: 15%;
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(29, 78, 216, 0.02));
-    filter: blur(50px);
+    left: 20%;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(29, 78, 216, 0.02));
+    filter: blur(55px);
     border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
-    animation: liquidMorph 16s ease-in-out infinite alternate;
+    animation: liquidMorph 12s ease-in-out infinite alternate;
 }
 
-/* Kinetic Motion Engines */
+/* Kinetic Motion Engines (Increased translation coordinates for visible tracking) */
 @keyframes slowDriftOne {
     0% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(-30px, 40px) scale(1.05); }
-    100% { transform: translate(20px, -10px) scale(0.95); }
+    50% { transform: translate(-100px, 80px) scale(1.1); } 
+    100% { transform: translate(50px, -30px) scale(0.95); }
 }
 
 @keyframes slowDriftTwo {
     0% { transform: translate(0, 0) scale(0.95); }
-    50% { transform: translate(40px, -30px) scale(1.1); }
-    100% { transform: translate(-10px, 20px) scale(1); }
+    50% { transform: translate(90px, -90px) scale(1.15); } 
+    100% { transform: translate(-30px, 50px) scale(1); }
 }
 
 @keyframes liquidMorph {
     0% {
         border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
-        transform: rotate(0deg);
+        transform: rotate(0deg) scale(1);
     }
     50% {
         border-radius: 65% 35% 50% 50% / 55% 45% 55% 45%;
-        transform: rotate(45deg) scale(1.05);
+        transform: rotate(45deg) scale(1.1); 
     }
     100% {
         border-radius: 50% 50% 35% 65% / 40% 60% 40% 60%;
-        transform: rotate(90deg);
+        transform: rotate(90deg) scale(0.95);
     }
 }
 
-/* Tight mobile rendering container overrides */
+/* Responsive Structural Scaling for Mobile viewports */
 @media (max-width: 768px) {
     .ambient-bg-wrapper {
         width: 100vw;
         height: 100vh;
     }
-    .ambient-orb { filter: blur(50px); opacity: 0.08; }
-    .orb-one { width: 200px; height: 200px; top: 5%; right: -5%; }
-    .orb-two { width: 180px; height: 180px; bottom: 15%; left: -5%; }
-    .ambient-squiggle { width: 200px; height: 180px; filter: blur(35px); left: 10%; top: 40%; }
+    .ambient-orb { filter: blur(50px); opacity: 0.12; }
+    .orb-one { width: 240px; height: 240px; top: 10%; right: -10%; }
+    .orb-two { width: 210px; height: 210px; bottom: 20%; left: -10%; }
+    .ambient-squiggle { width: 230px; height: 210px; filter: blur(35px); left: 15%; top: 35%; }
 }
