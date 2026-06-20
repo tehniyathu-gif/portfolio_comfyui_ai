@@ -154,22 +154,19 @@ body {
     color: var(--text-silver-bright);
     line-height: 1.1;
     display: block;
+    white-space: nowrap; 
 }
 
-/* Global Fix: Keeps B.F.A. aligned to the right underneath your name on laptops/desktops too */
-.academic-title-wrap {
-    text-align: right; 
-    margin-top: 6px;
-    width: 100%;
-}
-
+/* Updated Academic Title: Integrated alongside the name inline */
 .academic-title {
     font-family: var(--font-heading);
-    font-size: 1.05rem; 
+    font-size: 0.95rem; /* Downscaled slightly from 1.05rem for a better fit */
     letter-spacing: 2px;
     color: var(--olive-lettering);
     font-weight: 700;
     display: inline-block;
+    vertical-align: middle;
+    margin-left: 15px; /* Creates spacing between your name and B.F.A. */
 }
 
 .contact-data-strip {
@@ -411,7 +408,6 @@ body {
 /* --- Mobile View Overrides --- */
 @media (max-width: 768px) {
     .container {
-        /* FIXED: Changed from '40px 0' to '40px 5%' to give breathing space on left/right edges */
         padding: 40px 5%; 
     }
 
@@ -443,30 +439,32 @@ body {
         font-size: 0.95rem; 
     }
     
-    /* FIXED: Decreased size and prevented line wrapping so "Begum" fits seamlessly */
     .primary-name {
-        font-size: 1.15rem; 
+        font-size: clamp(0.95rem, 4.2vw, 1.35rem); /* Marginally tweaked to perfectly handle name + B.F.A on one line */
         letter-spacing: 1px;
         display: block;
         width: 100%;
         margin-bottom: 4px;
         white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
-    /* Scales down B.F.A font on phone screens while maintaining the global right-alignment */
+    /* Scales down integrated B.F.A text sizing dynamically on phone viewports */
     .academic-title {
-        font-size: 0.85rem;
+        font-size: clamp(0.65rem, 2.5vw, 0.8rem);
+        margin-left: 8px;
     }
 
     .profession-italic-title {
-        font-size: 1.5rem; /* FIXED: Marginally downscaled from 1.65rem for better balance */
+        font-size: 1.5rem; 
         letter-spacing: 1.5px;
         margin-top: 6px;
         margin-bottom: 12px;
     }
 
     .unified-body-text {
-        font-size: 1rem; /* FIXED: Marginally downscaled from 1.05rem to make prose crisp and airy */
+        font-size: 1rem; 
         line-height: 1.6;
     }
     
