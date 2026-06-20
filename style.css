@@ -24,6 +24,8 @@
 
 html {
     scroll-behavior: smooth;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -32,6 +34,7 @@ body {
     color: var(--text-silver-muted);
     line-height: 1.6; 
     overflow-x: hidden;
+    max-width: 100%;
     -webkit-font-smoothing: antialiased; 
 }
 
@@ -137,7 +140,7 @@ body {
 
 /* --- Slide 1: Identity & About Elements --- */
 .section-about {
-    background-color: #080C17;
+    background-color: transparent; /* Changed to let background blobs shine through cleanly */
 }
 
 .identity-block {
@@ -251,7 +254,6 @@ body {
     gap: 16px;
 }
 
-/* FIX: Forces Resume & CV links to stay olive and prevents the browser's default purple visited state override */
 .credential-link,
 .credential-link:link,
 .credential-link:visited {
@@ -268,7 +270,7 @@ body {
 
 /* --- Slide 2: Portfolio Structural Grid --- */
 .section-portfolio {
-    background-color: #080C17;
+    background-color: transparent; /* Shifted to transparent so background stays continuous */
     border-top: 1px solid rgba(148, 163, 184, 0.04);
 }
 
@@ -332,4 +334,321 @@ body {
     position: absolute;
     top: 14px;
     left: 14px;
-    background-color: rgba(10,
+    background-color: rgba(10, 15, 29, 0.85);
+    border: 1px solid var(--text-silver-muted);
+    color: var(--text-silver-bright);
+    font-size: 0.8rem; 
+    text-transform: uppercase;
+    padding: 4px 12px;
+    letter-spacing: 1px;
+    border-radius: 2px;
+}
+
+.category-tag.video-tag {
+    border-color: var(--olive-contrast);
+    color: var(--olive-lettering);
+}
+
+.placeholder-icon {
+    font-size: 3.5rem; 
+    opacity: 0.2;
+    transition: var(--transition-smooth);
+}
+
+.card:hover .placeholder-icon {
+    opacity: 0.5;
+    transform: scale(1.05);
+}
+
+.card-content { padding: 30px; } 
+
+.card-content h3 {
+    font-family: var(--font-body);
+    color: var(--text-silver-bright);
+    font-size: 1.45rem; 
+    margin-bottom: 8px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.card-content p {
+    font-size: 1.1rem; 
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+}
+
+.portfolio-footer-cta {
+    display: flex;
+    justify-content: flex-start; 
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+
+.btn-primary-unlinked {
+    display: inline-block;
+    font-family: var(--font-body);
+    background-color: transparent;
+    color: var(--olive-lettering);
+    border: 1px solid var(--olive-contrast);
+    padding: 16px 40px; 
+    font-size: 1.05rem; 
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 2px;
+}
+
+/* --- Clean Unified Fine-Print Footer Layout --- */
+.portfolio-absolute-footer {
+    width: 100%;
+    border-top: 1px solid rgba(148, 163, 184, 0.06);
+    padding-top: 25px;
+    margin-top: 20px;
+}
+
+.footer-fine-print {
+    font-size: 0.8rem; 
+    letter-spacing: 1.5px;
+    color: var(--text-silver-muted);
+    opacity: 0.6;
+    white-space: nowrap; 
+}
+
+/* --- Adaptive Device Transitions --- */
+@media (max-width: 1024px) {
+    .bg-image-wrapper { display: none; }
+}
+
+/* --- Mobile View Overrides --- */
+@media (max-width: 768px) {
+    .container {
+        padding: 40px 5%; 
+        width: 100%;
+    }
+
+    .slide {
+        min-height: auto; 
+        padding-top: 80px; 
+        padding-bottom: 40px;
+        overflow: hidden;
+    }
+
+    .content-left-aligned {
+        max-width: 100%; 
+        text-align: left; 
+    }
+    
+    .navbar-right {
+        position: absolute;
+        top: 0;
+        right: 5%;
+        left: auto;
+        padding: 25px 0 0 0;
+    }
+
+    .nav-links a,
+    .nav-links a:link,
+    .nav-links a:visited {
+        font-size: 0.8rem; 
+        color: var(--text-silver-bright) !important;
+    }
+
+    .nav-links {
+        justify-content: flex-end;
+        gap: 15px; 
+    }
+    
+    .primary-name {
+        font-size: clamp(0.95rem, 4.2vw, 1.35rem); 
+        letter-spacing: 1px;
+        display: block;
+        width: 100%;
+        margin-bottom: 4px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .academic-title {
+        font-size: clamp(0.65rem, 2.5vw, 0.8rem);
+        margin-left: 8px;
+    }
+
+    .profession-italic-title {
+        font-size: 1.5rem; 
+        letter-spacing: 1.5px;
+        margin-top: 6px;
+        margin-bottom: 12px;
+        text-align: center;
+        width: 100%;
+        color: var(--olive-lettering) !important;
+    }
+
+    .unified-body-text {
+        font-size: 1rem; 
+        line-height: 1.6;
+    }
+    
+    .contact-data-strip {
+        flex-direction: column;
+        align-items: center; 
+        gap: 6px;
+        margin: 14px 0 12px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .contact-item {
+        font-size: 1.05rem; 
+        width: 100%;
+    }
+    
+    .inline-vertical-divider { display: none; } 
+    
+    .section-title {
+        font-size: 1.65rem;
+        letter-spacing: 2px;
+    }
+
+    .section-subtitle {
+        font-size: 1.05rem;
+        color: var(--olive-lettering) !important;
+    }
+
+    .portfolio-info-matter {
+        font-size: 1.05rem;
+        margin-bottom: 30px;
+    }
+
+    .card-media-placeholder {
+        height: 145px; 
+    }
+
+    .card-content {
+        padding: 16px;
+    }
+
+    .card-content h3 {
+        font-size: 1.25rem;
+    }
+
+    .card-content p {
+        font-size: 0.95rem;
+    }
+
+    .btn-primary-unlinked {
+        padding: 14px 30px;
+        font-size: 0.95rem;
+        width: 100%; 
+        text-align: center;
+    }
+    
+    .credential-link,
+    .credential-link:link,
+    .credential-link:visited {
+        font-size: 0.95rem;
+        color: var(--olive-lettering) !important;
+    }
+    
+    .footer-fine-print {
+        white-space: normal; 
+        font-size: 0.75rem;
+        display: block;
+        line-height: 1.4;
+    }
+}
+
+/* ==========================================================================
+   Ambient Moving Background Elements (Pure CSS Configuration)
+   ========================================================================== */
+
+.ambient-bg-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;                 /* Sent explicitly backward to prevent visual text block cuts */
+    pointer-events: none;       
+    overflow: hidden;
+    background-color: transparent;
+}
+
+/* Base style config for blurring soft gradient dots */
+.ambient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.09;              /* Bumped up slightly so it stands out beautifully against the dark base */
+    background: radial-gradient(circle, #1d4ed8, #2563eb, transparent);
+}
+
+.orb-one {
+    width: 350px;
+    height: 350px;
+    top: -5%;
+    right: -10%;
+    animation: slowDriftOne 22s ease-in-out infinite alternate;
+}
+
+.orb-two {
+    width: 300px;
+    height: 300px;
+    bottom: 10%;
+    left: -10%;
+    background: radial-gradient(circle, #1e40af, #3b82f6, transparent);
+    animation: slowDriftTwo 18s ease-in-out infinite alternate;
+}
+
+/* Generative Liquid "Squiggle" Shape */
+.ambient-squiggle {
+    position: absolute;
+    width: 320px;
+    height: 280px;
+    top: 35%;
+    left: 15%;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(29, 78, 216, 0.02));
+    filter: blur(50px);
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    animation: liquidMorph 16s ease-in-out infinite alternate;
+}
+
+/* Kinetic Motion Engines */
+@keyframes slowDriftOne {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-30px, 40px) scale(1.05); }
+    100% { transform: translate(20px, -10px) scale(0.95); }
+}
+
+@keyframes slowDriftTwo {
+    0% { transform: translate(0, 0) scale(0.95); }
+    50% { transform: translate(40px, -30px) scale(1.1); }
+    100% { transform: translate(-10px, 20px) scale(1); }
+}
+
+@keyframes liquidMorph {
+    0% {
+        border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+        transform: rotate(0deg);
+    }
+    50% {
+        border-radius: 65% 35% 50% 50% / 55% 45% 55% 45%;
+        transform: rotate(45deg) scale(1.05);
+    }
+    100% {
+        border-radius: 50% 50% 35% 65% / 40% 60% 40% 60%;
+        transform: rotate(90deg);
+    }
+}
+
+/* Tight mobile rendering container overrides */
+@media (max-width: 768px) {
+    .ambient-bg-wrapper {
+        width: 100vw;
+        height: 100vh;
+    }
+    .ambient-orb { filter: blur(50px); opacity: 0.08; }
+    .orb-one { width: 200px; height: 200px; top: 5%; right: -5%; }
+    .orb-two { width: 180px; height: 180px; bottom: 15%; left: -5%; }
+    .ambient-squiggle { width: 200px; height: 180px; filter: blur(35px); left: 10%; top: 40%; }
+}
