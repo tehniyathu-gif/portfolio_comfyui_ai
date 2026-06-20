@@ -145,18 +145,20 @@ body {
     margin-bottom: 8px;
 }
 
+/* MODIFIED: Switched font family to var(--font-heading) to utilize a naturally bolder/wider structure */
 .primary-name {
-    font-family: var(--font-body);
-    font-size: 2.6rem; 
+    font-family: var(--font-heading);
+    font-size: 2.2rem; /* Adjusted from 2.6rem slightly since Syncopate runs visually wider */
     font-weight: 700; 
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--text-silver-bright);
-    line-height: 1.1;
+    line-height: 1.2;
     display: block;
     white-space: nowrap; 
 }
 
+/* Adjusted spacing slightly to cleanly fit alongside the new name font style */
 .academic-title {
     font-family: var(--font-heading);
     font-size: 0.95rem; 
@@ -165,7 +167,7 @@ body {
     font-weight: 700;
     display: inline-block;
     vertical-align: middle;
-    margin-left: 15px; 
+    margin-left: 12px; 
 }
 
 .contact-data-strip {
@@ -431,16 +433,16 @@ body {
 
     .nav-links {
         justify-content: flex-end;
-        gap: 15px; /* MODIFIED: Slipped link gaps down slightly for tighter spacing on mobile layout */
+        gap: 15px; 
     }
 
-    /* MODIFIED: Scaled text sizing down from 0.95rem to 0.8rem for high screen readability */
     .nav-links a {
         font-size: 0.8rem; 
     }
     
+    /* MODIFIED: Adjusted mobile viewport clamping layout to seamlessly lock the broader heading font on phones */
     .primary-name {
-        font-size: clamp(0.95rem, 4.2vw, 1.35rem); 
+        font-size: clamp(0.85rem, 3.8vw, 1.25rem); 
         letter-spacing: 1px;
         display: block;
         width: 100%;
@@ -451,8 +453,8 @@ body {
     }
 
     .academic-title {
-        font-size: clamp(0.65rem, 2.5vw, 0.8rem);
-        margin-left: 8px;
+        font-size: clamp(0.6rem, 2.2vw, 0.75rem);
+        margin-left: 6px;
     }
 
     .profession-italic-title {
